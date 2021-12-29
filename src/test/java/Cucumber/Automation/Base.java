@@ -23,13 +23,17 @@ public class Base {
 		
 		
 		prop=new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\u29082\\Downloads\\Automation\\Automation\\src\\test\\java\\Cucumber\\Automation\\global.properties");
-		
+		String userpath = System.getProperty("user.dir");
+		System.out.println(userpath);
+		String propertypath = userpath+"\\src\\test\\java\\Cucumber\\Automation\\global.properties";
+		System.out.println(propertypath);
+		FileInputStream fis=new FileInputStream(propertypath);
 		prop.load(fis);
 
 	
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
+		String driverpath=userpath+"\\src\\test\\java\\Cucumber\\Automation\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", driverpath);
 		
 		//Headless-mode
 		/*

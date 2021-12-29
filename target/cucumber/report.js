@@ -149,7 +149,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 492400,
+  "duration": 234800,
   "status": "passed"
 });
 formatter.scenario({
@@ -279,118 +279,4 @@ formatter.match({
     }
   ],
   "location": "stepDefination.enter_the_something_and_something(String,String)"
-});
-formatter.result({
-  "duration": 39277080900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.user_is_on_home_page()"
-});
-formatter.result({
-  "duration": 3033013000,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.click_on_the_profile_icon()"
-});
-formatter.result({
-  "duration": 3137861200,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.click_on_the_admin_option()"
-});
-formatter.result({
-  "duration": 14213030500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.click_Selfservice_option_from_leftNavigation_panel()"
-});
-formatter.result({
-  "duration": 8076646300,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.click_on_URL_Redirect_Option()"
-});
-formatter.result({
-  "duration": 11051778900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.verify_the_source_url_field_is_loaded()"
-});
-formatter.result({
-  "duration": 3027823100,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.filter_the_Status_option_by_Enabled()"
-});
-formatter.result({
-  "duration": 60473847900,
-  "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (219875f73307fb1c0c64f3a29f5c887e)] -\u003e xpath: (//cds-icon[@shape\u003d\u0027filter-grid\u0027])[5]] (tried for 60 second(s) with 500 milliseconds interval)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027B903LMAA\u0027, ip: \u0027192.168.1.100\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_202\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\\Users\\u29082\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 219875f73307fb1c0c64f3a29f5c887e\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat stepDefinations.stepDefination.filter_the_Status_option_by_Enabled(stepDefination.java:117)\r\n\tat ✽.Then Filter the Status option by Enabled(URLRedirect.feature:14)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "stepDefination.search_for_the_source_URL_Available()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.disable_if_it_is_available()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.enter_the_value_for_source_url()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.enter_the_value_for_target_url()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.select_the_date_value()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.click_on_post_button()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.verify_the_error_sucess_message()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.click_on_close_button_in_the_pop_up()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "stepDefination.verify_the_created_url_redirect()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.embedding("image/png", "embedded0.png");
-formatter.after({
-  "duration": 118229000,
-  "status": "passed"
-});
 });
