@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="142.409803">
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect creation" time="142.409803">
+<failure message="org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (219875f73307fb1c0c64f3a29f5c887e)] -&gt; xpath: (//cds-icon[@shape='filter-grid'])[5]] (tried for 60 second(s) with 500 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'B903LMAA', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\u29082\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 219875f73307fb1c0c64f3a29f5c887e&#13;&#10;&#9;at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)&#13;&#10;&#9;at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)&#13;&#10;&#9;at stepDefinations.stepDefination.filter_the_Status_option_by_Enabled(stepDefination.java:117)&#13;&#10;&#9;at ✽.Then Filter the Status option by Enabled(URLRedirect.feature:14)&#13;&#10;"><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
+When User is on home page...................................................passed
+Then Click on the profile icon..............................................passed
+Then Click on the Admin option..............................................passed
+Then Click on Selfservice option from leftNavigation panel..................passed
+Then Click on URL Redirect Option...........................................passed
+Then Verify the Source URL field is loaded..................................passed
+Then Filter the Status option by Enabled....................................failed
+Then Search for the Source URL - Available..................................skipped
+And Disable if it is available..............................................skipped
+Then Enter the value for Source URL.........................................skipped
+Then Enter the value for Target URL.........................................skipped
+Then Select the Date value..................................................skipped
+Then Click on POST button...................................................skipped
+Then Verify the error-sucess message........................................skipped
+Then Click on close button in the pop up....................................skipped
+Then Verify the created URL redirect........................................skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (219875f73307fb1c0c64f3a29f5c887e)] -> xpath: (//cds-icon[@shape='filter-grid'])[5]] (tried for 60 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'B903LMAA', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\u29082\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 219875f73307fb1c0c64f3a29f5c887e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at stepDefinations.stepDefination.filter_the_Status_option_by_Enabled(stepDefination.java:117)
+	at ✽.Then Filter the Status option by Enabled(URLRedirect.feature:14)
+]]></failure>
+</testcase>
+</testsuite>
