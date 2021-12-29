@@ -1,6 +1,6 @@
 Feature: SourceX - URL Redirect functionality Validation
 
-#URL Redirect creation - Present date#
+#URL Redirect creation - Present date scenario#
 
 @URLRedirect @smoke @sanity @Regression
 Scenario Outline: Validating the URL - Redirect creation
