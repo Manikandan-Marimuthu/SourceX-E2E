@@ -26,7 +26,7 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #-----------------------------------------------------------------------------------------------------------#
-#URL Redirect creation - Future date#
+#URL Redirect creation - Future date scenario#
 
 @futuredate
 Scenario Outline: Validating the URL - Redirect creation
