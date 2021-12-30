@@ -1,0 +1,280 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 166100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 102,
+        "name": "Validating the URL - Redirect Cross Content creation",
+        "description": "",
+        "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-cross-content-creation;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 153990600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.closeBrowser(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 41966567700,
+              "status": "passed"
+            },
+            "line": 82,
+            "name": "Enter the \"mmarimuthu@vmware.com\" and \"Leavemealone@2401\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mmarimuthu@vmware.com",
+                  "offset": 11
+                },
+                {
+                  "val": "Leavemealone@2401",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefination.enter_the_something_and_something(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3078658500,
+              "status": "passed"
+            },
+            "line": 83,
+            "name": "User is on home page",
+            "match": {
+              "location": "stepDefination.user_is_on_home_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3156280400,
+              "status": "passed"
+            },
+            "line": 84,
+            "name": "Click on the profile icon",
+            "match": {
+              "location": "stepDefination.click_on_the_profile_icon()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16745957700,
+              "status": "passed"
+            },
+            "line": 85,
+            "name": "Click on the Admin option",
+            "match": {
+              "location": "stepDefination.click_on_the_admin_option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8158313100,
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "Click on Selfservice option from leftNavigation panel",
+            "match": {
+              "location": "stepDefination.click_Selfservice_option_from_leftNavigation_panel()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17519912100,
+              "status": "passed"
+            },
+            "line": 87,
+            "name": "Click on URL Redirect Option",
+            "match": {
+              "location": "stepDefination.click_on_URL_Redirect_Option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3067087800,
+              "status": "passed"
+            },
+            "line": 88,
+            "name": "Verify the Source URL field is loaded",
+            "match": {
+              "location": "stepDefination.verify_the_source_url_field_is_loaded()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14446725700,
+              "status": "passed"
+            },
+            "line": 89,
+            "name": "Filter the Status option by Enabled",
+            "match": {
+              "location": "stepDefination.filter_the_Status_option_by_Enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13452477400,
+              "status": "passed"
+            },
+            "line": 90,
+            "name": "Search for the Cross Content Source URL - Available",
+            "match": {
+              "location": "stepDefination.search_for_the_Cross_Content_Source_URL_Available()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24796974200,
+              "status": "passed"
+            },
+            "line": 91,
+            "name": "Disable if Cross Content Source URL is available",
+            "match": {
+              "location": "stepDefination.Disable_if_Cross_Content_Source_URL_is_available()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3329432600,
+              "status": "passed"
+            },
+            "line": 92,
+            "name": "Enter the value for Cross Content Source URL",
+            "match": {
+              "location": "stepDefination.enter_the_value_for_Cross_Content_Source_URL()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3356337200,
+              "status": "passed"
+            },
+            "line": 93,
+            "name": "Enter the value for Cross Content Target URL",
+            "match": {
+              "location": "stepDefination.enter_the_value_for_Cross_Content_Target_URL()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6230207100,
+              "status": "passed"
+            },
+            "line": 94,
+            "name": "Select the Date value",
+            "match": {
+              "location": "stepDefination.select_the_date_value()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10136179400,
+              "status": "passed"
+            },
+            "line": 95,
+            "name": "Click on POST button",
+            "match": {
+              "location": "stepDefination.click_on_post_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3134126600,
+              "status": "passed"
+            },
+            "line": 96,
+            "name": "Click on Confirm button",
+            "match": {
+              "location": "stepDefination.click_on_Confirm_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 104461400,
+              "status": "passed"
+            },
+            "line": 97,
+            "name": "Verify the error-sucess message",
+            "match": {
+              "location": "stepDefination.verify_the_error_sucess_message()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3087405300,
+              "status": "passed"
+            },
+            "line": 98,
+            "name": "Click on close button in the pop up",
+            "match": {
+              "location": "stepDefination.click_on_close_button_in_the_pop_up()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8629176000,
+              "status": "passed"
+            },
+            "line": 99,
+            "name": "Verify the created Cross Content URL redirect",
+            "match": {
+              "location": "stepDefination.verify_the_created_Cross_Content_URL_redirect()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 80,
+            "name": "@URLRedirectCrossContent"
+          }
+        ]
+      }
+    ],
+    "name": "SourceX - URL Redirect functionality Validation",
+    "description": "",
+    "id": "sourcex---url-redirect-functionality-validation",
+    "keyword": "Feature",
+    "uri": "URLRedirect.feature"
+  }
+]
