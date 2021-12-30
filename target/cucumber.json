@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 170800,
+              "duration": 158700,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 109,
-        "name": "Validating the URL - Redirect Cross BU creation",
+        "line": 160,
+        "name": "Validating the URL - Redirect Enable functionality",
         "description": "",
-        "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-cross-bu-creation;;2",
+        "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-enable-functionality;;2",
         "after": [
           {
             "result": {
-              "duration": 108715200,
+              "duration": 41192900,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 45625105000,
+              "duration": 95478812600,
               "status": "passed"
             },
-            "line": 89,
+            "line": 139,
             "name": "Enter the \"mmarimuthu@vmware.com\" and \"Leavemealone@2401\"",
             "match": {
               "arguments": [
@@ -60,10 +60,10 @@
           },
           {
             "result": {
-              "duration": 3073523700,
+              "duration": 3083231100,
               "status": "passed"
             },
-            "line": 90,
+            "line": 140,
             "name": "User is on home page",
             "match": {
               "location": "stepDefination.user_is_on_home_page()"
@@ -72,10 +72,10 @@
           },
           {
             "result": {
-              "duration": 3188384300,
+              "duration": 3275942300,
               "status": "passed"
             },
-            "line": 91,
+            "line": 141,
             "name": "Click on the profile icon",
             "match": {
               "location": "stepDefination.click_on_the_profile_icon()"
@@ -84,10 +84,10 @@
           },
           {
             "result": {
-              "duration": 16050363100,
+              "duration": 42029253100,
               "status": "passed"
             },
-            "line": 92,
+            "line": 142,
             "name": "Click on the Admin option",
             "match": {
               "location": "stepDefination.click_on_the_admin_option()"
@@ -96,10 +96,10 @@
           },
           {
             "result": {
-              "duration": 8145760000,
+              "duration": 8171291900,
               "status": "passed"
             },
-            "line": 93,
+            "line": 143,
             "name": "Click on Selfservice option from leftNavigation panel",
             "match": {
               "location": "stepDefination.click_Selfservice_option_from_leftNavigation_panel()"
@@ -108,10 +108,10 @@
           },
           {
             "result": {
-              "duration": 13850290000,
+              "duration": 21582984000,
               "status": "passed"
             },
-            "line": 94,
+            "line": 144,
             "name": "Click on URL Redirect Option",
             "match": {
               "location": "stepDefination.click_on_URL_Redirect_Option()"
@@ -120,10 +120,10 @@
           },
           {
             "result": {
-              "duration": 3082793900,
+              "duration": 3095715100,
               "status": "passed"
             },
-            "line": 95,
+            "line": 145,
             "name": "Verify the Source URL field is loaded",
             "match": {
               "location": "stepDefination.verify_the_source_url_field_is_loaded()"
@@ -132,10 +132,10 @@
           },
           {
             "result": {
-              "duration": 14361538200,
+              "duration": 14443523000,
               "status": "passed"
             },
-            "line": 96,
+            "line": 146,
             "name": "Filter the Status option by Enabled",
             "match": {
               "location": "stepDefination.filter_the_Status_option_by_Enabled()"
@@ -144,58 +144,58 @@
           },
           {
             "result": {
-              "duration": 13430922000,
+              "duration": 13556315200,
               "status": "passed"
             },
-            "line": 97,
-            "name": "Search for the Cross BU Source URL - Available",
+            "line": 147,
+            "name": "Search for the old Source URL - Available",
             "match": {
-              "location": "stepDefination.search_for_the_Cross_BU_Source_URL_Available()"
+              "location": "stepDefination.search_for_the_old_source_URL_Available()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 6069894200,
+              "duration": 31957377900,
               "status": "passed"
             },
-            "line": 98,
-            "name": "Disable if Cross BU Source URL is available",
+            "line": 148,
+            "name": "Disable if old Source URL is available",
             "match": {
-              "location": "stepDefination.disable_if_Cross_BU_Source_URL_available()"
+              "location": "stepDefination.disable_if_old_Source_URL_is_available()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 3328907900,
+              "duration": 3432602800,
               "status": "passed"
             },
-            "line": 99,
-            "name": "Enter the value for Cross BU Source URL",
+            "line": 149,
+            "name": "Enter the value for old Source URL",
             "match": {
-              "location": "stepDefination.enter_the_value_for_Cross_BU_Source_URL()"
+              "location": "stepDefination.Enter_the_value_for_old_Source_URL()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 3281460400,
+              "duration": 3420366600,
               "status": "passed"
             },
-            "line": 100,
-            "name": "Enter the value for Cross BU Target URL",
+            "line": 150,
+            "name": "Enter the value for old Target URL",
             "match": {
-              "location": "stepDefination.enter_the_value_for_Cross_BU_Target_URL()"
+              "location": "stepDefination.Enter_the_value_for_old_Target_URL()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 6245595000,
+              "duration": 6219317200,
               "status": "passed"
             },
-            "line": 101,
+            "line": 151,
             "name": "Select the Date value",
             "match": {
               "location": "stepDefination.select_the_date_value()"
@@ -204,10 +204,10 @@
           },
           {
             "result": {
-              "duration": 10135080400,
+              "duration": 10228090300,
               "status": "passed"
             },
-            "line": 102,
+            "line": 152,
             "name": "Click on POST button",
             "match": {
               "location": "stepDefination.click_on_post_button()"
@@ -216,34 +216,46 @@
           },
           {
             "result": {
-              "duration": 3104474000,
+              "duration": 16728278500,
               "status": "passed"
             },
-            "line": 103,
-            "name": "Click on Confirm button",
+            "line": 153,
+            "name": "Edit the Target URL",
             "match": {
-              "location": "stepDefination.click_on_Confirm_button()"
+              "location": "stepDefination.edit_the_Target_URL()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 125867200,
+              "duration": 3212609500,
               "status": "passed"
             },
-            "line": 104,
-            "name": "Verify the error-sucess message",
+            "line": 154,
+            "name": "Click on Save Changes Button",
             "match": {
-              "location": "stepDefination.verify_the_error_sucess_message()"
+              "location": "stepDefination.click_on_Save_Changes_Button()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 3076306400,
+              "duration": 6140421200,
               "status": "passed"
             },
-            "line": 105,
+            "line": 155,
+            "name": "Verify the update-sucess message",
+            "match": {
+              "location": "stepDefination.verify_the_update_sucess_message()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3148782400,
+              "status": "passed"
+            },
+            "line": 156,
             "name": "Click on close button in the pop up",
             "match": {
               "location": "stepDefination.click_on_close_button_in_the_pop_up()"
@@ -252,21 +264,21 @@
           },
           {
             "result": {
-              "duration": 22748344400,
+              "duration": 32486655300,
               "status": "passed"
             },
-            "line": 106,
-            "name": "Verify the created Cross BU URL redirect",
+            "line": 157,
+            "name": "Verify the updated  URL redirect",
             "match": {
-              "location": "stepDefination.verify_the_created_Cross_BU_url_redirect()"
+              "location": "stepDefination.verify_the_updated_URL_redirect()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 87,
-            "name": "@URLRedirectCrossBU"
+            "line": 137,
+            "name": "@Enabled_URLRedirectEdit"
           }
         ]
       }

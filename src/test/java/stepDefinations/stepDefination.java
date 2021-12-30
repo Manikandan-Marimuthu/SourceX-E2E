@@ -421,7 +421,6 @@ public class stepDefination extends Base {
 
 			boolean disableconfirmationMsg = driver.getPageSource()
 					.contains("URL redirect has been updated sucessfully.");
-			Thread.sleep(3000);
 			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
@@ -593,7 +592,7 @@ public class stepDefination extends Base {
 		Thread.sleep(3000);
 
 		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
-		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURLValue_old"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURLValue_Enabled"));
 		Thread.sleep(5000);
 
 		Robot robot = new Robot();
@@ -601,26 +600,91 @@ public class stepDefination extends Base {
 		robot.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(5000);
 	}
+	
+	@And("^Disable if old Source URL is available$")
+	public void disable_if_old_Source_URL_is_available() throws Throwable {
+		List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int resultSize = tableResult.size();
+		System.out.println("Result of the Filter is: " + resultSize);
+		if (resultSize > 0) {
+			WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(3000);
+
+			actionIcon.click();
+			Thread.sleep(5000);
+
+			WebElement disableIcon = driver.findElement(By.xpath("//div[text()='Disable ']"));
+			disableIcon.click();
+			Thread.sleep(3000);
+
+			boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
+			System.out.println("Validation Message is: " + disableMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			WebElement confirmButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+			wait.until(ExpectedConditions.visibilityOf(confirmButton));
+			confirmButton.click();
+			Thread.sleep(5000);
+
+			boolean disableconfirmationMsg = driver.getPageSource()
+					.contains("URL redirect has been updated sucessfully.");
+			Thread.sleep(5000);
+			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
+
+			System.out.println("Validation Message is: " + disableconfirmationMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			wait.until(ExpectedConditions.visibilityOf(closeButton));
+			closeButton.click();
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		} else {
+			System.out.println("URL-Redirect is already in disabled state");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+	}
+	
+	@Then("^Enter the value for old Source URL$")
+	public void Enter_the_value_for_old_Source_URL() throws Throwable {
+		WebElement sourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceUrl']"));
+		sourceURLField.sendKeys(prop.getProperty("SourceURLValue_Enabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Enter the value for old Target URL$")
+	public void Enter_the_value_for_old_Target_URL() throws Throwable {
+		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetUrl']"));
+		TargetURLField.sendKeys(prop.getProperty("TargetURLValue_Enabled"));
+		Thread.sleep(3000);
+	}
 
 	@Then("^Edit the Target URL$")
 	public void edit_the_Target_URL() throws Throwable {
-		WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
-		Actions action = new Actions(driver);
-		action.sendKeys(Keys.PAGE_DOWN).build().perform();
-		Thread.sleep(3000);
-
-		actionIcon.click();
-		Thread.sleep(3000);
-
-		WebElement editIcon = driver.findElement(By.xpath("//div[text()='Edit ']"));
-		editIcon.click();
-		Thread.sleep(3000);
+		driver.navigate().refresh();
+    	Thread.sleep(5000);
+    	WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+    	Thread.sleep(3000);
+    	actionIcon.click();
+    	Thread.sleep(3000);
+    	WebElement editIcon = driver.findElement(By.xpath("//div[contains(text(),'Edit')]"));
+  	    editIcon.click(); 
+  	    Thread.sleep(2000);
+    
 
 		/* editing the target url with new url */
 
 		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetEdit']"));
 		TargetURLField.clear();
-		TargetURLField.sendKeys(prop.getProperty("TargetURLValue_new"));
+		TargetURLField.sendKeys(prop.getProperty("New_TargetURLValue_Enabled"));
 		Thread.sleep(3000);
 	}
 
@@ -634,10 +698,14 @@ public class stepDefination extends Base {
 
 	@Then("^Verify the update-sucess message$")
 	public void verify_the_update_sucess_message() throws Throwable {
+		
+		Thread.sleep(3000);
 		WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(closeButton));
 
 		boolean test = driver.getPageSource().contains("URL redirect has been updated sucessfully");
+		
 		System.out.println("Message is: " + test);
 		Assert.assertEquals(test, true);
 	}
@@ -647,13 +715,14 @@ public class stepDefination extends Base {
 		((JavascriptExecutor) driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
-		driver.get(prop.getProperty("SourceURLValue_old"));
-		Thread.sleep(5000);
+		driver.get(prop.getProperty("SourceURLValue_Enabled"));
+		Thread.sleep(7000);
 
 		String redirectedURL = driver.getCurrentUrl();
 		System.out.println(redirectedURL);
-		assertEquals(prop.getProperty("TargetURLValue_new"), redirectedURL);
+		assertEquals(prop.getProperty("New_TargetURLValue_Enabled"), redirectedURL);
 		driver.close();
+		Thread.sleep(2000);
 		driver.switchTo().window(tabs.get(0));
 		Thread.sleep(2000);
 	}
@@ -683,7 +752,7 @@ public class stepDefination extends Base {
 
 	}
 	
-	@Then("^Search for the Source URL - Disabled$")
+	@Then("^Search for the Old Source URL - Disabled$")
 	public void search_for_the_source_URL_Disable() throws Throwable {
 		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
 		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
@@ -693,7 +762,7 @@ public class stepDefination extends Base {
 		Thread.sleep(3000);
 
 		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
-		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURLValue_old1"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURLValue_Disabled"));
 		Thread.sleep(5000);
 
 		Robot robot = new Robot();
@@ -701,27 +770,86 @@ public class stepDefination extends Base {
 		robot.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(5000);
 	}
-	@And("^Enable if  Source URL is Disabled$")
-	public void enable_if_it_is_available() throws Throwable {
+	
+
+	@Then("^Enter the value for Old Source URL$")
+	public void Enter_the_value_for_Old_Source_URL() throws Throwable {
+		WebElement sourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceUrl']"));
+		sourceURLField.sendKeys(prop.getProperty("SourceURLValue_Disabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Enter the value for Old Target URL$")
+	public void Enter_the_value_for_Old_Target_URL() throws Throwable {
+		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetUrl']"));
+		Thread.sleep(3000);
+		TargetURLField.sendKeys(prop.getProperty("TargetURLValue_Disabled"));
+		Thread.sleep(3000);
+	}
+	
+	@Then("^Edit the old Target URL$")
+	public void edit_the_old_Target_URL() throws Throwable {
+			driver.navigate().refresh();
+	    	Thread.sleep(5000);
+	    	WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+	    	Thread.sleep(3000);
+	    	actionIcon.click();
+	    	Thread.sleep(3000);
+	    	WebElement editIcon = driver.findElement(By.xpath("//div[contains(text(),'Edit')]"));
+	  	    editIcon.click(); 
+	  	    Thread.sleep(2000);
+	    
+
+			/* editing the target url with new url */
+	  	  Thread.sleep(3000);
+			WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetEdit']"));
+			TargetURLField.clear();
+			TargetURLField.sendKeys(prop.getProperty("New_TargetURLValue_Diabled"));
+			Thread.sleep(3000);
+		}
+	@Then("^Search for the Old Source Available$")
+	public void search_for_the_new_Target_URL_Available() throws Throwable {
+		
+    	Thread.sleep(5000);
+		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
+		
+    	Thread.sleep(6000);
+		Actions action = new Actions(driver);
+		action.moveToElement(sourceurlFilterIcon).click().perform();
+		Thread.sleep(5000);
+
+		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURLValue_Disabled"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+	}
+	@And("^Disable The old SourceURL$")
+	public void disable_The_new_Target_URL_is_available() throws Throwable {
 		List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
 		int resultSize = tableResult.size();
 		System.out.println("Result of the Filter is: " + resultSize);
 		if (resultSize > 0) {
 			WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+			Thread.sleep(3000);
 			Actions action = new Actions(driver);
 			action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 
 			actionIcon.click();
 			Thread.sleep(3000);
 
-			WebElement enableIcon = driver.findElement(By.xpath("//div[text()='Enable ']"));
-			enableIcon.click();
+			WebElement disableIcon = driver.findElement(By.xpath("//div[text()='Disable ']"));
+			disableIcon.click();
 			Thread.sleep(3000);
 
-			boolean enableMsg = driver.getPageSource().contains("Do you want to enable this URL redirect?");
-			System.out.println("Validation Message is: " + enableMsg);
-			Assert.assertEquals(enableMsg, true);
+			boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
+			System.out.println("Validation Message is: " + disableMsg);
+			Assert.assertEquals(disableMsg, true);
 			Thread.sleep(2000);
 
 			WebElement confirmButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
@@ -729,14 +857,15 @@ public class stepDefination extends Base {
 			confirmButton.click();
 			Thread.sleep(5000);
 
-			boolean enableconfirmationMsg = driver.getPageSource()
+			boolean disableconfirmationMsg = driver.getPageSource()
 					.contains("URL redirect has been updated sucessfully.");
+			Thread.sleep(5000);
 			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
 
-			System.out.println("Validation Message is: " + enableconfirmationMsg);
-			Assert.assertEquals(enableMsg, true);
+			System.out.println("Validation Message is: " + disableconfirmationMsg);
+			Assert.assertEquals(disableMsg, true);
 			Thread.sleep(2000);
 
 			wait.until(ExpectedConditions.visibilityOf(closeButton));
@@ -745,33 +874,32 @@ public class stepDefination extends Base {
 			Thread.sleep(3000);
 
 		} else {
-			System.out.println("URL-Redirect is already in enabled state");
+			System.out.println("URL-Redirect is already in disabled state");
 			driver.navigate().refresh();
 			Thread.sleep(3000);
+			
 		}
-		Thread.sleep(3000);
-	}
+			
+		
+		}
 	
-	@Then("^Edit the old Target URL$")
-	public void edit_the_old_Target_URL() throws Throwable {
-		WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
-		Actions action = new Actions(driver);
-		action.sendKeys(Keys.PAGE_DOWN).build().perform();
-		Thread.sleep(3000);
+	@Then("^Verify the updated Disabled URL redirect$")
+	public void verify_the_updated_disabled_URL_redirect() throws Throwable {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get(prop.getProperty("SourceURLValue_Disabled"));
+		Thread.sleep(8000);
 
-		actionIcon.click();
-		Thread.sleep(3000);
-
-		WebElement editIcon = driver.findElement(By.xpath("//div[text()='Edit ']"));
-		editIcon.click();
-		Thread.sleep(3000);
-
-		/* editing the target url with new url */
-
-		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetEdit']"));
-		TargetURLField.clear();
-		TargetURLField.sendKeys(prop.getProperty("TargetURLValue_new1"));
-		Thread.sleep(3000);
+		String redirectedURL = driver.getCurrentUrl();
+		System.out.println(redirectedURL);
+		System.out.println(prop.getProperty("New_TargetURLValue_Diabled"));
+		assertEquals(prop.getProperty("New_TargetURLValue_Diabled"), redirectedURL);
+		
+		driver.close();
+		Thread.sleep(6000);
+		driver.switchTo().window(tabs.get(0));
+		Thread.sleep(2000);
 	}
 
 
