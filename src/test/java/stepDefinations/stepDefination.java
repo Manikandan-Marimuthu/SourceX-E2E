@@ -313,6 +313,63 @@ public class stepDefination extends Base {
         Thread.sleep(2000);
         
     }
+    
+/*<---------------------------------URL Redirect for Edit Target URL------------------------------------------>*/  
+    
+    @Then("^Click on Edit option of created URL redirect$")
+    public void Click_on_Edit_option_of_created_URL_redirect() throws Throwable {
+    	driver.navigate().refresh();
+    	Thread.sleep(5000);
+    	WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+    	Thread.sleep(3000);
+    	actionIcon.click();
+    	Thread.sleep(3000);
+    	WebElement editIcon = driver.findElement(By.xpath("//div[contains(text(),'Edit')]"));
+  	    editIcon.click(); 
+  	    Thread.sleep(2000);
+    }	
+    
+    @Then("^Clear the Target URL field and give new URL$")
+    public void Clear_the_Target_URL_field_and_give_new_URL() throws Throwable {
+    	WebElement targetURLField = driver.findElement(By.id("clr-form-control-9"));
+    	Thread.sleep(3000);
+    	targetURLField.clear();
+    	Thread.sleep(3000);
+    	targetURLField.sendKeys(prop.getProperty("EditTargetURLValue"));
+  	    Thread.sleep(2000);
+  	    WebElement saveButton = driver.findElement(By.xpath("//div[@class='edit-submit']/button"));
+	    saveButton.click(); 
+	    Thread.sleep(2000);
+  	    
+    }	
+    
+    @Then("^Verify the error-success message$")
+    public void verify_the_error_success_message() throws Throwable {
+    	WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+    	wait.until(ExpectedConditions.visibilityOf(closeButton));
+    	
+    	boolean test = driver.getPageSource().contains("URL redirect has been updated sucessfully.");
+    	System.out.println("Message is: "+test);
+    	Assert.assertEquals(test, true);
+    }
+    
+    @Then("^Verify the updated URL redirect$")
+    public void verify_the_updated_url_redirect() throws Throwable {
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        driver.get(prop.getProperty("SourceURLValue"));   
+        Thread.sleep(5000);
+        
+        String redirectedURL = driver.getCurrentUrl();
+        System.out.println(redirectedURL);
+        assertEquals(prop.getProperty("EditTargetURLValue"), redirectedURL);
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+        Thread.sleep(2000);
+        
+    }
+    
     	
 }	
 /*<--------------------------------------URL Redirect Features Ended------------------------------------------->*/
