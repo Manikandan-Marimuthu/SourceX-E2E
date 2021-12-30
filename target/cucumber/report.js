@@ -9,177 +9,162 @@ formatter.feature({
 formatter.scenarioOutline({
   "comments": [
     {
-      "line": 54,
-      "value": "#-------------------------------------------------------------------------------------------#"
+      "line": 85,
+      "value": "#......Sangavva features added........................"
     },
     {
-      "line": 55,
-      "value": "#URL Redirect creation - Edit Target URL scenario#"
+      "line": 86,
+      "value": "#Scenario 2:"
     }
   ],
-  "line": 58,
-  "name": "Validating the URL - Edit the Target URL",
+  "line": 88,
+  "name": "Validating the URL - Redirect Cross BU creation",
   "description": "",
-  "id": "sourcex---url-redirect-functionality-validation;validating-the-url---edit-the-target-url",
+  "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-cross-bu-creation",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 57,
-      "name": "@EditTargetURL"
+      "line": 87,
+      "name": "@URLRedirectCrossBU"
     }
   ]
 });
 formatter.step({
-  "line": 59,
+  "line": 89,
   "name": "Enter the \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 60,
+  "line": 90,
   "name": "User is on home page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 61,
+  "line": 91,
   "name": "Click on the profile icon",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 62,
+  "line": 92,
   "name": "Click on the Admin option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 63,
+  "line": 93,
   "name": "Click on Selfservice option from leftNavigation panel",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 64,
+  "line": 94,
   "name": "Click on URL Redirect Option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 65,
+  "line": 95,
   "name": "Verify the Source URL field is loaded",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 66,
+  "line": 96,
   "name": "Filter the Status option by Enabled",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 67,
-  "name": "Search for the Source URL - Available",
+  "line": 97,
+  "name": "Search for the Cross BU Source URL - Available",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 68,
-  "name": "Disable if it is available",
+  "line": 98,
+  "name": "Disable if Cross BU Source URL is available",
   "keyword": "And "
 });
 formatter.step({
-  "line": 69,
-  "name": "Enter the value for Source URL",
+  "line": 99,
+  "name": "Enter the value for Cross BU Source URL",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 70,
-  "name": "Enter the value for Target URL",
+  "line": 100,
+  "name": "Enter the value for Cross BU Target URL",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 71,
+  "line": 101,
   "name": "Select the Date value",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 72,
+  "line": 102,
   "name": "Click on POST button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 73,
+  "line": 103,
+  "name": "Click on Confirm button",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 104,
   "name": "Verify the error-sucess message",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 74,
+  "line": 105,
   "name": "Click on close button in the pop up",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 75,
-  "name": "Verify the created URL redirect",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 76,
-  "name": "Click on Edit option of created URL redirect",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 77,
-  "name": "Clear the Target URL field and give new URL",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 78,
-  "name": "Verify the error-success message",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 79,
-  "name": "Verify the updated URL redirect",
+  "line": 106,
+  "name": "Verify the created Cross BU URL redirect",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 81,
+  "line": 107,
   "name": "",
   "description": "",
-  "id": "sourcex---url-redirect-functionality-validation;validating-the-url---edit-the-target-url;",
+  "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-cross-bu-creation;",
   "rows": [
     {
       "cells": [
         "username",
         "password"
       ],
-      "line": 82,
-      "id": "sourcex---url-redirect-functionality-validation;validating-the-url---edit-the-target-url;;1"
+      "line": 108,
+      "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-cross-bu-creation;;1"
     },
     {
       "cells": [
         "mmarimuthu@vmware.com",
         "Leavemealone@2401"
       ],
-      "line": 83,
-      "id": "sourcex---url-redirect-functionality-validation;validating-the-url---edit-the-target-url;;2"
+      "line": 109,
+      "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-cross-bu-creation;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 167400,
+  "duration": 170800,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 83,
-  "name": "Validating the URL - Edit the Target URL",
+  "line": 109,
+  "name": "Validating the URL - Redirect Cross BU creation",
   "description": "",
-  "id": "sourcex---url-redirect-functionality-validation;validating-the-url---edit-the-target-url;;2",
+  "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-cross-bu-creation;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 57,
-      "name": "@EditTargetURL"
+      "line": 87,
+      "name": "@URLRedirectCrossBU"
     }
   ]
 });
 formatter.step({
-  "line": 59,
+  "line": 89,
   "name": "Enter the \"mmarimuthu@vmware.com\" and \"Leavemealone@2401\"",
   "matchedColumns": [
     0,
@@ -188,103 +173,88 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "line": 60,
+  "line": 90,
   "name": "User is on home page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 61,
+  "line": 91,
   "name": "Click on the profile icon",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 62,
+  "line": 92,
   "name": "Click on the Admin option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 63,
+  "line": 93,
   "name": "Click on Selfservice option from leftNavigation panel",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 64,
+  "line": 94,
   "name": "Click on URL Redirect Option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 65,
+  "line": 95,
   "name": "Verify the Source URL field is loaded",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 66,
+  "line": 96,
   "name": "Filter the Status option by Enabled",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 67,
-  "name": "Search for the Source URL - Available",
+  "line": 97,
+  "name": "Search for the Cross BU Source URL - Available",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 68,
-  "name": "Disable if it is available",
+  "line": 98,
+  "name": "Disable if Cross BU Source URL is available",
   "keyword": "And "
 });
 formatter.step({
-  "line": 69,
-  "name": "Enter the value for Source URL",
+  "line": 99,
+  "name": "Enter the value for Cross BU Source URL",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 70,
-  "name": "Enter the value for Target URL",
+  "line": 100,
+  "name": "Enter the value for Cross BU Target URL",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 71,
+  "line": 101,
   "name": "Select the Date value",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 72,
+  "line": 102,
   "name": "Click on POST button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 73,
+  "line": 103,
+  "name": "Click on Confirm button",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 104,
   "name": "Verify the error-sucess message",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 74,
+  "line": 105,
   "name": "Click on close button in the pop up",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 75,
-  "name": "Verify the created URL redirect",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 76,
-  "name": "Click on Edit option of created URL redirect",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 77,
-  "name": "Clear the Target URL field and give new URL",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 78,
-  "name": "Verify the error-success message",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 79,
-  "name": "Verify the updated URL redirect",
+  "line": 106,
+  "name": "Verify the created Cross BU URL redirect",
   "keyword": "Then "
 });
 formatter.match({
@@ -301,151 +271,130 @@ formatter.match({
   "location": "stepDefination.enter_the_something_and_something(String,String)"
 });
 formatter.result({
-  "duration": 33715847600,
+  "duration": 45625105000,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.user_is_on_home_page()"
 });
 formatter.result({
-  "duration": 3097036400,
+  "duration": 3073523700,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_the_profile_icon()"
 });
 formatter.result({
-  "duration": 3242022100,
+  "duration": 3188384300,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_the_admin_option()"
 });
 formatter.result({
-  "duration": 8630539700,
+  "duration": 16050363100,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_Selfservice_option_from_leftNavigation_panel()"
 });
 formatter.result({
-  "duration": 8135684500,
+  "duration": 8145760000,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_URL_Redirect_Option()"
 });
 formatter.result({
-  "duration": 9566811000,
+  "duration": 13850290000,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.verify_the_source_url_field_is_loaded()"
 });
 formatter.result({
-  "duration": 3051834600,
+  "duration": 3082793900,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.filter_the_Status_option_by_Enabled()"
 });
 formatter.result({
-  "duration": 14423403600,
+  "duration": 14361538200,
   "status": "passed"
 });
 formatter.match({
-  "location": "stepDefination.search_for_the_source_URL_Available()"
+  "location": "stepDefination.search_for_the_Cross_BU_Source_URL_Available()"
 });
 formatter.result({
-  "duration": 13571666700,
+  "duration": 13430922000,
   "status": "passed"
 });
 formatter.match({
-  "location": "stepDefination.disable_if_it_is_available()"
+  "location": "stepDefination.disable_if_Cross_BU_Source_URL_available()"
 });
 formatter.result({
-  "duration": 22741338100,
+  "duration": 6069894200,
   "status": "passed"
 });
 formatter.match({
-  "location": "stepDefination.enter_the_value_for_source_url()"
+  "location": "stepDefination.enter_the_value_for_Cross_BU_Source_URL()"
 });
 formatter.result({
-  "duration": 3591618100,
+  "duration": 3328907900,
   "status": "passed"
 });
 formatter.match({
-  "location": "stepDefination.enter_the_value_for_target_url()"
+  "location": "stepDefination.enter_the_value_for_Cross_BU_Target_URL()"
 });
 formatter.result({
-  "duration": 3407695600,
+  "duration": 3281460400,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.select_the_date_value()"
 });
 formatter.result({
-  "duration": 6235256800,
+  "duration": 6245595000,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_post_button()"
 });
 formatter.result({
-  "duration": 10086220900,
+  "duration": 10135080400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "stepDefination.click_on_Confirm_button()"
+});
+formatter.result({
+  "duration": 3104474000,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.verify_the_error_sucess_message()"
 });
 formatter.result({
-  "duration": 113578500,
+  "duration": 125867200,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_close_button_in_the_pop_up()"
 });
 formatter.result({
-  "duration": 3105880800,
+  "duration": 3076306400,
   "status": "passed"
 });
 formatter.match({
-  "location": "stepDefination.verify_the_created_url_redirect()"
+  "location": "stepDefination.verify_the_created_Cross_BU_url_redirect()"
 });
 formatter.result({
-  "duration": 7995899500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.Click_on_Edit_option_of_created_URL_redirect()"
-});
-formatter.result({
-  "duration": 13283154100,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.Clear_the_Target_URL_field_and_give_new_URL()"
-});
-formatter.result({
-  "duration": 10473097700,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.verify_the_error_success_message()"
-});
-formatter.result({
-  "duration": 89878600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "stepDefination.verify_the_updated_url_redirect()"
-});
-formatter.result({
-  "duration": 7527792300,
+  "duration": 22748344400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 303737300,
+  "duration": 108715200,
   "status": "passed"
 });
 });
