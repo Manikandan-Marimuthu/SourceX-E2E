@@ -145,6 +145,11 @@ Then Click on URL Redirect Option
 Then Verify the Source URL field is loaded
 Then Filter the Status option by Enabled
 Then Search for the old Source URL - Available
+And Disable if old Source URL is available
+Then Enter the value for old Source URL
+Then Enter the value for old Target URL
+Then Select the Date value
+Then Click on POST button
 Then Edit the Target URL
 Then Click on Save Changes Button
 Then Verify the update-sucess message
@@ -166,17 +171,22 @@ Then Click on Selfservice option from leftNavigation panel
 Then Click on URL Redirect Option
 Then Verify the Source URL field is loaded
 Then Filter the Status option by Disabled
-Then Search for the Source URL - Disabled
-And Enable if  Source URL is Disabled
+Then Search for the Old Source URL - Disabled
+Then Enter the value for Old Source URL
+Then Enter the value for Old Target URL
+Then Select the Date value
+Then Click on POST button
 Then Edit the old Target URL
 Then Click on Save Changes Button
 Then Verify the update-sucess message
 Then Click on close button in the pop up
-Then Verify the updated  URL redirect
+Then Verify the updated Disabled URL redirect
+Then Filter the Status option by Enabled
+Then Search for the Old Source Available
+And Disable The old SourceURL
 Examples:
 |username        			|password            |
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
-
 
 #-----------------------------------------------------------------------------------------------------------#
 
