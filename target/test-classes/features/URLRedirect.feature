@@ -188,6 +188,79 @@ Examples:
 |username        			|password            |
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
+#Scenario 6:
+@URLRedirect_A-BandB-A_when_A-B_is_Disabled
+Scenario Outline: Validating the URL - Redirect A-B and B-A functionality
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  SourceURLA - Available
+And Disable  SourceURLA is available
+Then Enter the value for SourceURLA
+Then Enter the value for TargetURLB
+Then Select the Date value
+Then Click on POST button
+Then Verify the error-successab message
+Then Click on close button in the pop up
+Then Verify the created URLAB redirect
+And Disable  SourceURLA is available
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  Source URLB - Available
+And Disable  SourceURLB is available
+Then Enter the value for SourceURLB
+Then Enter the value for TargetURLA
+Then Select the Date value
+Then Click on POST button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URLAB1 redirect
+And Disable  SourceURLB is available
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+
+#Scenario 7:
+@URLRedirect_A-BandB-A_when_A-B_is_Enabled
+Scenario Outline: Validating the URL - Redirect A-B and B-A functionality
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  SourceURLa - Available
+And Disable  SourceURLa is available
+Then Enter the value for SourceURLa
+Then Enter the value for TargetURLb
+Then Select the Date value
+Then Click on POST button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URLab redirect
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  Source URLb - Available
+And Disable  SourceURLb is available
+Then Enter the value for SourceURLb
+Then Enter the value for TargetURLa
+Then Select the Date value
+Then Click on POST button
+Then Verify the error message
+Then Click on close button in the pop up
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+
 #-----------------------------------------------------------------------------------------------------------#
 
 

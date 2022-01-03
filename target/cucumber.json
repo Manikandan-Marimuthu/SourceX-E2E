@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 146900,
+              "duration": 1393600,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 160,
-        "name": "Validating the URL - Redirect Enable functionality",
+        "line": 226,
+        "name": "Validating the URL - Redirect A-B and B-A functionality",
         "description": "",
-        "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-enable-functionality;;2",
+        "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-a-b-and-b-a-functionality;;2",
         "after": [
           {
             "result": {
-              "duration": 56040800,
+              "duration": 847331700,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 49840562300,
+              "duration": 77733557300,
               "status": "passed"
             },
-            "line": 139,
+            "line": 194,
             "name": "Enter the \"mmarimuthu@vmware.com\" and \"Leavemealone@2401\"",
             "match": {
               "arguments": [
@@ -60,10 +60,10 @@
           },
           {
             "result": {
-              "duration": 3094624800,
+              "duration": 3294956100,
               "status": "passed"
             },
-            "line": 140,
+            "line": 195,
             "name": "User is on home page",
             "match": {
               "location": "stepDefination.user_is_on_home_page()"
@@ -72,10 +72,10 @@
           },
           {
             "result": {
-              "duration": 3328638800,
+              "duration": 4484383600,
               "status": "passed"
             },
-            "line": 141,
+            "line": 196,
             "name": "Click on the profile icon",
             "match": {
               "location": "stepDefination.click_on_the_profile_icon()"
@@ -84,10 +84,10 @@
           },
           {
             "result": {
-              "duration": 13491981200,
+              "duration": 17395121900,
               "status": "passed"
             },
-            "line": 142,
+            "line": 197,
             "name": "Click on the Admin option",
             "match": {
               "location": "stepDefination.click_on_the_admin_option()"
@@ -96,10 +96,10 @@
           },
           {
             "result": {
-              "duration": 8192100900,
+              "duration": 8481402900,
               "status": "passed"
             },
-            "line": 143,
+            "line": 198,
             "name": "Click on Selfservice option from leftNavigation panel",
             "match": {
               "location": "stepDefination.click_Selfservice_option_from_leftNavigation_panel()"
@@ -108,10 +108,10 @@
           },
           {
             "result": {
-              "duration": 12098123600,
+              "duration": 10011105600,
               "status": "passed"
             },
-            "line": 144,
+            "line": 199,
             "name": "Click on URL Redirect Option",
             "match": {
               "location": "stepDefination.click_on_URL_Redirect_Option()"
@@ -120,10 +120,10 @@
           },
           {
             "result": {
-              "duration": 3078438800,
+              "duration": 3240145600,
               "status": "passed"
             },
-            "line": 145,
+            "line": 200,
             "name": "Verify the Source URL field is loaded",
             "match": {
               "location": "stepDefination.verify_the_source_url_field_is_loaded()"
@@ -132,10 +132,10 @@
           },
           {
             "result": {
-              "duration": 14390423000,
+              "duration": 15089008400,
               "status": "passed"
             },
-            "line": 146,
+            "line": 201,
             "name": "Filter the Status option by Enabled",
             "match": {
               "location": "stepDefination.filter_the_Status_option_by_Enabled()"
@@ -144,58 +144,58 @@
           },
           {
             "result": {
-              "duration": 13599003500,
+              "duration": 28504032800,
               "status": "passed"
             },
-            "line": 147,
-            "name": "Search for the old Source URL - Available",
+            "line": 202,
+            "name": "Search for the  SourceURLA - Available",
             "match": {
-              "location": "stepDefination.search_for_the_old_source_URL_Available()"
+              "location": "stepDefination.search_for_the_SourceURLA_Available()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 6657691600,
+              "duration": 6471731200,
               "status": "passed"
             },
-            "line": 148,
-            "name": "Disable if old Source URL is available",
+            "line": 203,
+            "name": "Disable  SourceURLA is available",
             "match": {
-              "location": "stepDefination.disable_if_old_Source_URL_is_available()"
+              "location": "stepDefination.disable_SourceURLA_is_available()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 3500926300,
+              "duration": 9048871500,
               "status": "passed"
             },
-            "line": 149,
-            "name": "Enter the value for old Source URL",
+            "line": 204,
+            "name": "Enter the value for SourceURLA",
             "match": {
-              "location": "stepDefination.Enter_the_value_for_old_Source_URL()"
+              "location": "stepDefination.enter_the_value_for_SourceURLA()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 3468772300,
+              "duration": 8371438300,
               "status": "passed"
             },
-            "line": 150,
-            "name": "Enter the value for old Target URL",
+            "line": 205,
+            "name": "Enter the value for TargetURLB",
             "match": {
-              "location": "stepDefination.Enter_the_value_for_old_Target_URL()"
+              "location": "stepDefination.enter_the_value_for_TargetURLB()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 11272364600,
+              "duration": 11537003800,
               "status": "passed"
             },
-            "line": 151,
+            "line": 206,
             "name": "Select the Date value",
             "match": {
               "location": "stepDefination.select_the_date_value()"
@@ -204,10 +204,10 @@
           },
           {
             "result": {
-              "duration": 10172936200,
+              "duration": 10471969000,
               "status": "passed"
             },
-            "line": 152,
+            "line": 207,
             "name": "Click on POST button",
             "match": {
               "location": "stepDefination.click_on_post_button()"
@@ -216,46 +216,22 @@
           },
           {
             "result": {
-              "duration": 16653494200,
+              "duration": 450987000,
               "status": "passed"
             },
-            "line": 153,
-            "name": "Edit the Target URL",
+            "line": 208,
+            "name": "Verify the error-successab message",
             "match": {
-              "location": "stepDefination.edit_the_Target_URL()"
+              "location": "stepDefination.verify_the_error_successab_message()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 3104459100,
+              "duration": 3481482000,
               "status": "passed"
             },
-            "line": 154,
-            "name": "Click on Save Changes Button",
-            "match": {
-              "location": "stepDefination.click_on_Save_Changes_Button()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6231853400,
-              "status": "passed"
-            },
-            "line": 155,
-            "name": "Verify the update-sucess message",
-            "match": {
-              "location": "stepDefination.verify_the_update_sucess_message()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 3138540700,
-              "status": "passed"
-            },
-            "line": 156,
+            "line": 209,
             "name": "Click on close button in the pop up",
             "match": {
               "location": "stepDefination.click_on_close_button_in_the_pop_up()"
@@ -264,21 +240,177 @@
           },
           {
             "result": {
-              "duration": 17062501800,
+              "duration": 14315671200,
               "status": "passed"
             },
-            "line": 157,
-            "name": "Verify the updated  URL redirect",
+            "line": 210,
+            "name": "Verify the created URLAB redirect",
             "match": {
-              "location": "stepDefination.verify_the_updated_URL_redirect()"
+              "location": "stepDefination.verify_the_created_urlAB_redirect()"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 34751866500,
+              "status": "passed"
+            },
+            "line": 211,
+            "name": "Disable  SourceURLA is available",
+            "match": {
+              "location": "stepDefination.disable_SourceURLA_is_available()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4283410100,
+              "status": "passed"
+            },
+            "line": 212,
+            "name": "Verify the Source URL field is loaded",
+            "match": {
+              "location": "stepDefination.verify_the_source_url_field_is_loaded()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14729067600,
+              "status": "passed"
+            },
+            "line": 213,
+            "name": "Filter the Status option by Enabled",
+            "match": {
+              "location": "stepDefination.filter_the_Status_option_by_Enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 28384723300,
+              "status": "passed"
+            },
+            "line": 214,
+            "name": "Search for the  Source URLB - Available",
+            "match": {
+              "location": "stepDefination.search_for_the_Source_URLB_Available()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5975092300,
+              "status": "passed"
+            },
+            "line": 215,
+            "name": "Disable  SourceURLB is available",
+            "match": {
+              "location": "stepDefination.disable_SourceURLB_is_available()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8847375000,
+              "status": "passed"
+            },
+            "line": 216,
+            "name": "Enter the value for SourceURLB",
+            "match": {
+              "location": "stepDefination.enter_the_value_for_SourceURLB()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8799114500,
+              "status": "passed"
+            },
+            "line": 217,
+            "name": "Enter the value for TargetURLA",
+            "match": {
+              "location": "stepDefination.enter_the_value_for_TargetURLA()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11538318000,
+              "status": "passed"
+            },
+            "line": 218,
+            "name": "Select the Date value",
+            "match": {
+              "location": "stepDefination.select_the_date_value()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10516478100,
+              "status": "passed"
+            },
+            "line": 219,
+            "name": "Click on POST button",
+            "match": {
+              "location": "stepDefination.click_on_post_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 360059300,
+              "status": "passed"
+            },
+            "line": 220,
+            "name": "Verify the error-sucess message",
+            "match": {
+              "location": "stepDefination.verify_the_error_sucess_message()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3446040800,
+              "status": "passed"
+            },
+            "line": 221,
+            "name": "Click on close button in the pop up",
+            "match": {
+              "location": "stepDefination.click_on_close_button_in_the_pop_up()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10955408300,
+              "status": "passed"
+            },
+            "line": 222,
+            "name": "Verify the created URLAB1 redirect",
+            "match": {
+              "location": "stepDefination.verify_the_created_urlAB1_redirect()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 36076963000,
+              "status": "passed"
+            },
+            "line": 223,
+            "name": "Disable  SourceURLB is available",
+            "match": {
+              "location": "stepDefination.disable_SourceURLB_is_available()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "line": 137,
-            "name": "@Enabled_URLRedirectEdit"
+            "line": 192,
+            "name": "@URLRedirect_A-BandB-A_when_A-B_is_Disabled"
           }
         ]
       }

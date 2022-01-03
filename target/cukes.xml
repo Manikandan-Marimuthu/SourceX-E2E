@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="202.433625">
-<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect Enable functionality" time="202.433625">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="411.89551">
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect A-B and B-A functionality" time="411.89551">
 <system-out><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
 When User is on home page...................................................passed
 Then Click on the profile icon..............................................passed
@@ -9,17 +9,28 @@ Then Click on Selfservice option from leftNavigation panel..................pass
 Then Click on URL Redirect Option...........................................passed
 Then Verify the Source URL field is loaded..................................passed
 Then Filter the Status option by Enabled....................................passed
-Then Search for the old Source URL - Available..............................passed
-And Disable if old Source URL is available..................................passed
-Then Enter the value for old Source URL.....................................passed
-Then Enter the value for old Target URL.....................................passed
+Then Search for the  SourceURLA - Available.................................passed
+And Disable  SourceURLA is available........................................passed
+Then Enter the value for SourceURLA.........................................passed
+Then Enter the value for TargetURLB.........................................passed
 Then Select the Date value..................................................passed
 Then Click on POST button...................................................passed
-Then Edit the Target URL....................................................passed
-Then Click on Save Changes Button...........................................passed
-Then Verify the update-sucess message.......................................passed
+Then Verify the error-successab message.....................................passed
 Then Click on close button in the pop up....................................passed
-Then Verify the updated  URL redirect.......................................passed
+Then Verify the created URLAB redirect......................................passed
+And Disable  SourceURLA is available........................................passed
+Then Verify the Source URL field is loaded..................................passed
+Then Filter the Status option by Enabled....................................passed
+Then Search for the  Source URLB - Available................................passed
+And Disable  SourceURLB is available........................................passed
+Then Enter the value for SourceURLB.........................................passed
+Then Enter the value for TargetURLA.........................................passed
+Then Select the Date value..................................................passed
+Then Click on POST button...................................................passed
+Then Verify the error-sucess message........................................passed
+Then Click on close button in the pop up....................................passed
+Then Verify the created URLAB1 redirect.....................................passed
+And Disable  SourceURLB is available........................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

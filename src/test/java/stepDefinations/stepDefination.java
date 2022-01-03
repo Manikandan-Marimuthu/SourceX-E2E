@@ -371,6 +371,7 @@ public class stepDefination extends Base {
     }
     
     /*sangavva url redirect features addded..................................................................*/
+    /*------------------------------------CROSS BU---------------------------------------------------------*/
     
     @Then("^Search for the Cross BU Source URL - Available$")
 	public void search_for_the_Cross_BU_Source_URL_Available() throws Throwable {
@@ -481,7 +482,8 @@ public class stepDefination extends Base {
 		Thread.sleep(2000);
 
 	}
-
+	  /*------------------------------------CROSS CONTENT---------------------------------------------------------*/
+	
 	@Then("^Search for the Cross Content Source URL - Available$")
 	public void search_for_the_Cross_Content_Source_URL_Available() throws Throwable {
 		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
@@ -583,6 +585,8 @@ public class stepDefination extends Base {
 
 	}
 
+	  /*------------------------------------Editing Enabled URL REDIRECT---------------------------------------------------------*/
+	
 	@Then("^Search for the old Source URL - Available$")
 	public void search_for_the_old_source_URL_Available() throws Throwable {
 		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
@@ -728,6 +732,8 @@ public class stepDefination extends Base {
 		Thread.sleep(2000);
 	}
 
+	/*------------------------------------Editing Disabled URL REDIRECT---------------------------------------------------------*/
+	
 	@Then("^Filter the Status option by Disabled$")
 	public void filter_the_Status_option_by_Diabled() throws Throwable {
 		WebElement statusFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[5]"));
@@ -904,7 +910,450 @@ public class stepDefination extends Base {
 	}
 
 
-    	
+	/*------------------------------------@URLRedirect_A-BandB-A_when_A-B_is_Disabled---------------------------------------------------------*/
+	
+	@Then("^Search for the  SourceURLA - Available$")
+	public void search_for_the_SourceURLA_Available() throws Throwable {
+		Thread.sleep(5000);
+		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
+
+		Thread.sleep(6000);
+		Actions action = new Actions(driver);
+		action.moveToElement(sourceurlFilterIcon).click().perform();
+		Thread.sleep(5000);
+
+		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURL_A_Disabled"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+	}
+
+	@Then("^Disable  SourceURLA is available$")
+	public void disable_SourceURLA_is_available() throws Throwable {
+		List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int resultSize = tableResult.size();
+		System.out.println("Result of the Filter is: " + resultSize);
+		if (resultSize > 0) {
+			WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+			Thread.sleep(3000);
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(6000);
+
+			actionIcon.click();
+			Thread.sleep(3000);
+
+			WebElement disableIcon = driver.findElement(By.xpath("//div[text()='Disable ']"));
+			disableIcon.click();
+			Thread.sleep(3000);
+
+			boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
+			System.out.println("Validation Message is: " + disableMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			WebElement confirmButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+			wait.until(ExpectedConditions.visibilityOf(confirmButton));
+			confirmButton.click();
+			Thread.sleep(5000);
+
+			boolean disableconfirmationMsg = driver.getPageSource()
+					.contains("URL redirect has been updated sucessfully.");
+			Thread.sleep(5000);
+			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
+
+			System.out.println("Validation Message is: " + disableconfirmationMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			wait.until(ExpectedConditions.visibilityOf(closeButton));
+			closeButton.click();
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		} else {
+			System.out.println("URL-Redirect is already in disabled state");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		}
+
+	}
+
+	@Then("^Enter the value for SourceURLA$")
+	public void enter_the_value_for_SourceURLA() throws Throwable {
+		Thread.sleep(3000);
+		WebElement sourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceUrl']"));
+		sourceURLField.sendKeys(prop.getProperty("SourceURL_A_Disabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Enter the value for TargetURLB$")
+	public void enter_the_value_for_TargetURLB() throws Throwable {
+		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetUrl']"));
+		Thread.sleep(3000);
+		TargetURLField.sendKeys(prop.getProperty("TargetURL_B_Disabled"));
+		Thread.sleep(3000);
+	}
+	
+	@Then("^Verify the error-successab message$")
+	public void verify_the_error_successab_message() throws Throwable {
+		WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+		wait.until(ExpectedConditions.visibilityOf(closeButton));
+
+		boolean test = driver.getPageSource().contains("URL redirect has been created sucessfully");
+		System.out.println("Message is: " + test);
+		Assert.assertEquals(test, true);
+	}
+
+	@Then("^Search for the  Source URLB - Available$")
+	public void search_for_the_Source_URLB_Available() throws Throwable {
+		Thread.sleep(5000);
+		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
+
+		Thread.sleep(6000);
+		Actions action = new Actions(driver);
+		action.moveToElement(sourceurlFilterIcon).click().perform();
+		Thread.sleep(5000);
+
+		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURL_B_Disabled"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+	}
+
+	@Then("^Disable  SourceURLB is available$")
+	public void disable_SourceURLB_is_available() throws Throwable {
+		List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int resultSize = tableResult.size();
+		System.out.println("Result of the Filter is: " + resultSize);
+		if (resultSize > 0) {
+			WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+			Thread.sleep(3000);
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(6000);
+
+			actionIcon.click();
+			Thread.sleep(3000);
+
+			WebElement disableIcon = driver.findElement(By.xpath("//div[text()='Disable ']"));
+			disableIcon.click();
+			Thread.sleep(3000);
+
+			boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
+			System.out.println("Validation Message is: " + disableMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			WebElement confirmButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+			wait.until(ExpectedConditions.visibilityOf(confirmButton));
+			confirmButton.click();
+			Thread.sleep(5000);
+
+			boolean disableconfirmationMsg = driver.getPageSource()
+					.contains("URL redirect has been updated sucessfully.");
+			Thread.sleep(5000);
+			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
+
+			System.out.println("Validation Message is: " + disableconfirmationMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			wait.until(ExpectedConditions.visibilityOf(closeButton));
+			closeButton.click();
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		} else {
+			System.out.println("URL-Redirect is already in disabled state");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		}
+
+	}
+
+	@Then("^Enter the value for SourceURLB$")
+	public void enter_the_value_for_SourceURLB() throws Throwable {
+		Thread.sleep(3000);
+		WebElement sourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceUrl']"));
+		sourceURLField.sendKeys(prop.getProperty("SourceURL_B_Disabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Enter the value for TargetURLA$")
+	public void enter_the_value_for_TargetURLA() throws Throwable {
+		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetUrl']"));
+		Thread.sleep(3000);
+		TargetURLField.sendKeys(prop.getProperty("TargetURL_A_Disabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Verify the created URLAB redirect$")
+	public void verify_the_created_urlAB_redirect() throws Throwable {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get(prop.getProperty("SourceURL_A_Disabled"));
+		Thread.sleep(5000);
+
+		String redirectedURL = driver.getCurrentUrl();
+		System.out.println(redirectedURL);
+		assertEquals(prop.getProperty("TargetURL_B_Disabled"), redirectedURL);
+		driver.close();
+		driver.switchTo().window(tabs.get(0));
+		Thread.sleep(2000);
+
+	}
+
+	@Then("^Verify the created URLAB1 redirect$")
+	public void verify_the_created_urlAB1_redirect() throws Throwable {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get(prop.getProperty("TargetURL_B_Disabled"));
+		Thread.sleep(5000);
+
+		String redirectedURL = driver.getCurrentUrl();
+		System.out.println(redirectedURL);
+		assertEquals(prop.getProperty("SourceURL_A_Disabled"), redirectedURL);
+		driver.close();
+		driver.switchTo().window(tabs.get(0));
+		Thread.sleep(2000);
+
+	}
+	
+	/*------------------------------------@URLRedirect_A-BandB-A_when_A-B_is_Disabled---------------------------------------------------------*/
+	
+	@Then("^Search for the  SourceURLa - Available$")
+	public void search_for_the_SourceURLa_Available() throws Throwable {
+		Thread.sleep(5000);
+		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
+
+		Thread.sleep(6000);
+		Actions action = new Actions(driver);
+		action.moveToElement(sourceurlFilterIcon).click().perform();
+		Thread.sleep(5000);
+
+		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURL_A_Enabled"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+	}
+
+	@Then("^Disable  SourceURLa is available$")
+	public void disable_SourceURLa_is_available() throws Throwable {
+		List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int resultSize = tableResult.size();
+		System.out.println("Result of the Filter is: " + resultSize);
+		if (resultSize > 0) {
+			WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+			Thread.sleep(3000);
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(6000);
+
+			actionIcon.click();
+			Thread.sleep(3000);
+
+			WebElement disableIcon = driver.findElement(By.xpath("//div[text()='Disable ']"));
+			disableIcon.click();
+			Thread.sleep(3000);
+
+			boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
+			System.out.println("Validation Message is: " + disableMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			WebElement confirmButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+			wait.until(ExpectedConditions.visibilityOf(confirmButton));
+			confirmButton.click();
+			Thread.sleep(5000);
+
+			boolean disableconfirmationMsg = driver.getPageSource()
+					.contains("URL redirect has been updated sucessfully.");
+			Thread.sleep(5000);
+			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
+
+			System.out.println("Validation Message is: " + disableconfirmationMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			wait.until(ExpectedConditions.visibilityOf(closeButton));
+			closeButton.click();
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		} else {
+			System.out.println("URL-Redirect is already in disabled state");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		}
+
+	}
+
+	@Then("^Enter the value for SourceURLa$")
+	public void enter_the_value_for_SourceURLa() throws Throwable {
+		Thread.sleep(3000);
+		WebElement sourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceUrl']"));
+		sourceURLField.sendKeys(prop.getProperty("SourceURL_A_Enabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Enter the value for TargetURLb$")
+	public void enter_the_value_for_TargetURLb() throws Throwable {
+		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetUrl']"));
+		Thread.sleep(3000);
+		TargetURLField.sendKeys(prop.getProperty("TargetURL_B_Enabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Verify the created URLab redirect$")
+	public void verify_the_created_urlab_redirect() throws Throwable {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get(prop.getProperty("SourceURL_A_Enabled"));
+		Thread.sleep(5000);
+
+		String redirectedURL = driver.getCurrentUrl();
+		System.out.println(redirectedURL);
+		assertEquals(prop.getProperty("TargetURL_B_Enabled"), redirectedURL);
+		driver.close();
+		driver.switchTo().window(tabs.get(0));
+		Thread.sleep(2000);
+
+	}
+
+	@Then("^Search for the  Source URLb - Available$")
+	public void search_for_the_Source_URLb_Available() throws Throwable {
+		Thread.sleep(5000);
+		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
+
+		Thread.sleep(6000);
+		Actions action = new Actions(driver);
+		action.moveToElement(sourceurlFilterIcon).click().perform();
+		Thread.sleep(5000);
+
+		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURL_B_Enabled"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+	}
+
+	@Then("^Disable  SourceURLb is available$")
+	public void disable_SourceURLb_is_available() throws Throwable {
+		List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int resultSize = tableResult.size();
+		System.out.println("Result of the Filter is: " + resultSize);
+		if (resultSize > 0) {
+			WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+			Thread.sleep(3000);
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(6000);
+
+			actionIcon.click();
+			Thread.sleep(3000);
+
+			WebElement disableIcon = driver.findElement(By.xpath("//div[text()='Disable ']"));
+			disableIcon.click();
+			Thread.sleep(3000);
+
+			boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
+			System.out.println("Validation Message is: " + disableMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			WebElement confirmButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+			wait.until(ExpectedConditions.visibilityOf(confirmButton));
+			confirmButton.click();
+			Thread.sleep(5000);
+
+			boolean disableconfirmationMsg = driver.getPageSource()
+					.contains("URL redirect has been updated sucessfully.");
+			Thread.sleep(5000);
+			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
+
+			System.out.println("Validation Message is: " + disableconfirmationMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			wait.until(ExpectedConditions.visibilityOf(closeButton));
+			closeButton.click();
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		} else {
+			System.out.println("URL-Redirect is already in disabled state");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		}
+
+	}
+
+	@Then("^Enter the value for SourceURLb$")
+	public void enter_the_value_for_SourceURLb() throws Throwable {
+		Thread.sleep(3000);
+		WebElement sourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceUrl']"));
+		sourceURLField.sendKeys(prop.getProperty("SourceURL_B_Enabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Enter the value for TargetURLa$")
+	public void enter_the_value_for_TargetURLa() throws Throwable {
+		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetUrl']"));
+		Thread.sleep(3000);
+		TargetURLField.sendKeys(prop.getProperty("TargetURL_A_Enabled"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Verify the error message$")
+	public void verify_the_error_message() throws Throwable {
+		WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+		wait.until(ExpectedConditions.visibilityOf(closeButton));
+
+		boolean test = driver.getPageSource().contains(
+				"The URL redirect you are trying to create cannot be redirected back to the original URL. Edit the existing redirect or create a new redirect with a different set of URLs");
+		System.out.println("Message is: " + test);
+
+		Assert.assertEquals(test, true);
+	}
 }	
 /*<--------------------------------------URL Redirect Features Ended------------------------------------------->*/
 	
