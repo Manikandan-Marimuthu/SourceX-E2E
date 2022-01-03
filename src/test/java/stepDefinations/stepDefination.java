@@ -910,8 +910,8 @@ public class stepDefination extends Base {
 	}
 
 
-	/*------------------------------------@URLRedirect_A-BandB-A_when_A-B_is_Disabled---------------------------------------------------------*/
-	
+	/*--------------------------------URLRedirect_A-BandB-A_when_A-B_is_Disabled-------------------------------------------------*/
+
 	@Then("^Search for the  SourceURLA - Available$")
 	public void search_for_the_SourceURLA_Available() throws Throwable {
 		Thread.sleep(5000);
@@ -1139,9 +1139,8 @@ public class stepDefination extends Base {
 		Thread.sleep(2000);
 
 	}
-	
-	/*------------------------------------@URLRedirect_A-BandB-A_when_A-B_is_Disabled---------------------------------------------------------*/
-	
+	/*--------------------------------URLRedirect_A-BandB-A_when_A-B_is_Enabled-------------------------------------------------*/
+
 	@Then("^Search for the  SourceURLa - Available$")
 	public void search_for_the_SourceURLa_Available() throws Throwable {
 		Thread.sleep(5000);
@@ -1354,6 +1353,6 @@ public class stepDefination extends Base {
 
 		Assert.assertEquals(test, true);
 	}
-}	
+}
 /*<--------------------------------------URL Redirect Features Ended------------------------------------------->*/
 	
