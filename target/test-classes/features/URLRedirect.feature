@@ -1,8 +1,9 @@
 Feature: SourceX - URL Redirect functionality Validation
 
+#Scenario 1
 #URL Redirect creation - Present date scenario#
 
-@URLRedirect @smoke @sanity @Regression
+@URLRedirect
 Scenario Outline: Validating the URL - Redirect creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -26,10 +27,11 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #-----------------------------------------------------------------------------------------------------------#
+#Scenario 2
 #URL Redirect creation - Future date scenario#
 
-@futuredate
-Scenario Outline: Validating the URL - Redirect creation
+@URLRedirect @fail
+Scenario Outline: Validating the URL - Redirect future date creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
 Then Click on the profile icon
@@ -52,9 +54,10 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #-------------------------------------------------------------------------------------------#
+#Scenario 3
 #URL Redirect creation - Edit Target URL scenario#
 
-@EditTargetURL
+@EditTargetURL @URLRedirect
 Scenario Outline: Validating the URL - Edit the Target URL
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -83,8 +86,10 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #......Sangavva features added........................
-#Scenario 2:
-@URLRedirectCrossBU
+
+#Scenario 4
+
+@URLRedirectCrossBU @URLRedirect
 Scenario Outline: Validating the URL - Redirect Cross BU creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -108,8 +113,8 @@ Examples:
 |username        			|password            |
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
-#Scenario 3:
-@URLRedirectCrossContent
+#Scenario 5
+@URLRedirectCrossContent @URLRedirect
 Scenario Outline: Validating the URL - Redirect Cross Content creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -133,8 +138,8 @@ Examples:
 |username        			|password            |
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
-#Scenario 4:
-@Enabled_URLRedirectEdit
+#Scenario 6
+@Enabled_URLRedirectEdit @URLRedirect
 Scenario Outline: Validating the URL - Redirect Enable functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -160,8 +165,8 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 
-#Scenario 5:
-@Disabled_URLRedirectEdit
+#Scenario 7
+@Disabled_URLRedirectEdit @URLRedirect
 Scenario Outline: Validating the URL - Redirect Enable functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -193,35 +198,7 @@ Examples:
 
 ##############################<-------Sample features-------->#####################################
 
-@Mobile
-Scenario: Home page default login
-Given User is on NetBanking landing page
-When User login into application with "john" and password "4321"
-Then Home page is populated
-And Cards displayed are "false"
-
 @PortalTest
-Scenario: Home page default login
-Given User is on NetBanking landing page
-When User sign up with following details
-| jenny | abcd | john@abcd.com |Australia | 3242353|
-Then Home page is populated
-And Cards displayed are "false"
-
-Scenario: Home page default login
-Given User is on NetBanking landing page
-When User sign up with following details
-| jenny | abcd | john@abcd.com |Australia | 3242353|
-Then Home page is populated
-And Cards displayed are "false"
-
-Scenario: Home page default login
-Given User is on NetBanking landing page
-When User sign up with following details
-| jenny | abcd | john@abcd.com |Australia | 3242353|
-Then Home page is populated
-And Cards displayed are "false"
-
 Scenario: Home page default login
 Given User is on NetBanking landing page
 When User sign up with following details

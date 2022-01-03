@@ -159,13 +159,22 @@ public class stepDefination extends Base {
     	System.out.println("Result of the Filter is: "+resultSize);
     	if(resultSize>0)
     	{
-    	  WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
-    	  Actions action = new Actions(driver);
-    	  action.sendKeys(Keys.PAGE_DOWN).build().perform();
-    	  Thread.sleep(3000);
+    	 Robot robot = new Robot();
+    	 robot.keyPress(KeyEvent.VK_DOWN);
+         robot.keyRelease(KeyEvent.VK_DOWN);
+    	 robot.keyPress(KeyEvent.VK_DOWN);
+         robot.keyRelease(KeyEvent.VK_DOWN);
+    	 WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+    	 
+    	 Actions action = new Actions(driver);
+    	 action.sendKeys(Keys.PAGE_DOWN).build().perform();
+    	 Thread.sleep(3000);
     	  
     	  actionIcon.click();
       	  Thread.sleep(3000);
+    		
+    	// Scrolling down the page till the element is found	
+      	  
 
     	  WebElement disableIcon = driver.findElement(By.xpath("//div[contains(text(),'Disable')]"));
     	  disableIcon.click(); 
@@ -281,6 +290,7 @@ public class stepDefination extends Base {
     @Then("^Select the Future Date value$")
     public void select_the_future_date_value() throws Throwable {
     	
+    	Thread.sleep(2000);
     	Actions action = new Actions(driver);
     	action.moveToElement(driver.findElement(By.xpath("//button[@title='Toggle datepicker']/cds-icon"))).click().perform();
     	Thread.sleep(3000);	
@@ -291,7 +301,7 @@ public class stepDefination extends Base {
     	
     	robot.keyPress(KeyEvent.VK_ENTER);
     	robot.keyRelease(KeyEvent.VK_ENTER);
-    	Thread.sleep(3000);
+    	Thread.sleep(1000);
     }
     
     @Then("^Verify the created URL redirect for future dated$")
@@ -301,6 +311,7 @@ public class stepDefination extends Base {
         driver.switchTo().window(tabs.get(1));
         driver.get(prop.getProperty("SourceURLValue"));   
         Thread.sleep(5000);
+
         
         String redirectedURL = driver.getCurrentUrl();
         System.out.println(redirectedURL);

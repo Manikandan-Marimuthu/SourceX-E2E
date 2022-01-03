@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(  
 	    features = "src/test/java/features",
 	    glue="stepDefinations",
-	    tags="@Enabled_URLRedirectEdit",
+	    tags="@URLRedirect",
 	    strict=true,
 	    monochrome=true,
 	    plugin= {"pretty","html:target/cucumber",
