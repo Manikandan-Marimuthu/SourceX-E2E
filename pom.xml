@@ -13,6 +13,31 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  <build>
+  <plugins>
+  
+<plugin>
+    <groupId>net.masterthought</groupId>
+    <artifactId>maven-cucumber-reporting</artifactId>
+    <version>2.8.0</version>
+    <executions>
+        <execution>
+            <id>execution</id>
+            <phase>verify</phase>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+            <configuration>
+                <projectName>CucumberWebGui</projectName>
+                <outputDirectory>${project.build.directory}</outputDirectory>
+                <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                <skippedFails>true</skippedFails>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+  </plugins>
+  </build>
 
   <dependencies>
   
@@ -35,7 +60,6 @@
     <scope>test</scope>
 </dependency>
   
-  
     <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -47,5 +71,21 @@
     <artifactId>maven-cucumber-reporting</artifactId>
     <version>5.6.2</version>
 </dependency>
+
+<dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports-cucumber4-adapter</artifactId>
+            <version>1.0.8</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-java</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
   </dependencies>
 </project>
