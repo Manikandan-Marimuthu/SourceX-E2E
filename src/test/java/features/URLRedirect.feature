@@ -332,6 +332,34 @@ Examples:
 |username        			|password            |
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
+#----------------------------------------------------------------------------------------------------------#
+#Scenario 12
+@URLRedirect_Filter_Option_SourceURL 
+Scenario Outline: Validating the URL - Redirect Filter functionality
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  SourceURL_filter - Available
+And Disable  SourceURL_filter is available
+Then Enter the value for SourceURL_filter
+Then Enter the value for TargetURL_filter
+Then Select the Date value
+Then Click on POST button
+Then Click on Confirm button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URLfilter redirect
+Then Filter the Status option by SourceURL
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+
 
 #-----------------------------------------------------------------------------------------------------------#
 

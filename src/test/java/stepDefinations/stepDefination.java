@@ -1457,6 +1457,158 @@ public class stepDefination extends Base {
     	closeButton.click();
     	Thread.sleep(3000);
     } 
+   
+   /*--------------------------------URLRedirect Source URL Filter option-------------------------------------------------*/
+
+	@Then("^Search for the  SourceURL_filter - Available$")
+	public void search_for_the_SourceURL_filter_Available() throws Throwable {
+		Thread.sleep(5000);
+		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
+
+		Thread.sleep(6000);
+		Actions action = new Actions(driver);
+		action.moveToElement(sourceurlFilterIcon).click().perform();
+		Thread.sleep(5000);
+
+		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURL_filter"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+	}
+
+	@Then("^Disable  SourceURL_filter is available$")
+	public void disable_SourceURL_filter_is_available() throws Throwable {
+		List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int resultSize = tableResult.size();
+		System.out.println("Result of the Filter is: " + resultSize);
+		if (resultSize > 0) {
+			WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+			Thread.sleep(3000);
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(6000);
+
+			actionIcon.click();
+			Thread.sleep(3000);
+
+			WebElement disableIcon = driver.findElement(By.xpath("//div[text()='Disable ']"));
+			disableIcon.click();
+			Thread.sleep(3000);
+
+			boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
+			System.out.println("Validation Message is: " + disableMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			WebElement confirmButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+			wait.until(ExpectedConditions.visibilityOf(confirmButton));
+			confirmButton.click();
+			Thread.sleep(5000);
+
+			boolean disableconfirmationMsg = driver.getPageSource()
+					.contains("URL redirect has been updated sucessfully.");
+			Thread.sleep(5000);
+			WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn-dialog']")));
+
+			System.out.println("Validation Message is: " + disableconfirmationMsg);
+			Assert.assertEquals(disableMsg, true);
+			Thread.sleep(2000);
+
+			wait.until(ExpectedConditions.visibilityOf(closeButton));
+			closeButton.click();
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		} else {
+			System.out.println("URL-Redirect is already in disabled state");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+
+		}
+
+	}
+
+	@Then("^Enter the value for SourceURL_filter$")
+	public void enter_the_value_for_SourceURL_filter() throws Throwable {
+		Thread.sleep(3000);
+		WebElement sourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceUrl']"));
+		sourceURLField.sendKeys(prop.getProperty("SourceURL_filter"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Enter the value for TargetURL_filter$")
+	public void enter_the_value_for_targetURL_filter() throws Throwable {
+		WebElement TargetURLField = driver.findElement(By.xpath("//input[@formcontrolname='targetUrl']"));
+		Thread.sleep(3000);
+		TargetURLField.sendKeys(prop.getProperty("TargetURL_filter"));
+		Thread.sleep(3000);
+	}
+
+	@Then("^Verify the created URLfilter redirect$")
+	public void verify_the_created_URLfilter_redirect() throws Throwable {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get(prop.getProperty("SourceURL_filter"));
+		Thread.sleep(5000);
+
+		String redirectedURL = driver.getCurrentUrl();
+		System.out.println(redirectedURL);
+		assertEquals(prop.getProperty("TargetURL_filter"), redirectedURL);
+		driver.close();
+		driver.switchTo().window(tabs.get(0));
+		Thread.sleep(2000);
+	}
+
+	@Then("^Filter the Status option by SourceURL$")
+	public void filter_the_Status_option_by_SourceURL() throws Throwable {
+		Thread.sleep(3000);
+		WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+		wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(sourceurlFilterIcon).click().perform();
+		Thread.sleep(3000);
+
+		WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		sourceurlSearchvalue.sendKeys(prop.getProperty("SourceURL_filter"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+		List<WebElement> tableResult1 = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int source_filterSize = tableResult1.size();
+
+		System.out.println("Result of the SourceURL Filter is: " + source_filterSize);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);
+		
+		action.sendKeys(Keys.PAGE_UP).build().perform();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		if (source_filterSize > 0) {
+			Thread.sleep(3000);
+			System.out.println("SourecURl filter is working as expected and avaliable value in 1st page is: " + source_filterSize);
+
+			Thread.sleep(2000);
+		} else {
+			System.out.println("SourecURl filter is not working as expected");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+	}
     
 }	
 /*<--------------------------------------URL Redirect Features Ended------------------------------------------->*/
