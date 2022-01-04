@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(  
 	    features = "src/test/java/features",
 	    glue="stepDefinations",
-	    tags="@URLRedirect",
+	    tags="@URLRedirect_A-BandB-A_when_A-B_is_Enabled",
 	    strict=true,
 	    monochrome=true,
 	    plugin= {"pretty","html:target/cucumber",
