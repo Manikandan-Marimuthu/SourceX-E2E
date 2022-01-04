@@ -362,6 +362,8 @@ public class stepDefination extends Base {
     	boolean test = driver.getPageSource().contains("URL redirect has been updated sucessfully.");
     	System.out.println("Message is: "+test);
     	Assert.assertEquals(test, true);
+    	closeButton.click();
+    	Thread.sleep(3000);
     }
     
     @Then("^Verify the updated URL redirect$")
@@ -1363,7 +1365,99 @@ public class stepDefination extends Base {
 
 		Assert.assertEquals(test, true);
 	}
+	
+/*souparnika- step definitions for Edit Source URL and Version History*/    
+/*<---------------------------------URL Redirect for Edit Source URL------------------------------------------>*/ 
+	
+	@Then("^Search for the update Source URL value - Available$")
+    public void search_for_the_update_source_URL_Available() throws Throwable {
+	
+        WebElement sourceurlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[1]"));
+    	wait.until(ExpectedConditions.visibilityOf(sourceurlFilterIcon));
     	
+    	Actions action = new Actions(driver);
+    	action.moveToElement(sourceurlFilterIcon).click().perform();
+    	Thread.sleep(3000);
+    	
+    	WebElement sourceurlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+    	sourceurlSearchvalue.sendKeys(prop.getProperty("EditSourceURLValue"));
+    	Thread.sleep(5000);
+    	
+    	Robot robot = new Robot();
+    	robot.keyPress(KeyEvent.VK_ESCAPE);
+    	robot.keyRelease(KeyEvent.VK_ESCAPE);
+    	Thread.sleep(5000);	
+    }
+	
+    
+    
+    @Then("^Clear the Source URL field and give new URL$")
+    public void Clear_the_Source_URL_field_and_give_new_URL() throws Throwable {
+    	WebElement SourceURLField = driver.findElement(By.xpath("//input[@formcontrolname='sourceEdit']"));
+    	Thread.sleep(3000);
+    	SourceURLField.clear();
+    	Thread.sleep(3000);
+    	SourceURLField.sendKeys(prop.getProperty("EditSourceURLValue"));
+  	    Thread.sleep(2000);
+  	    WebElement saveButton = driver.findElement(By.xpath("//div[@class='edit-submit']/button"));
+	    saveButton.click(); 
+	    Thread.sleep(2000);
+  	    
+    }	
+    
+    
+    @Then("^Verify the updated URL redirect for Source URL update$")
+    public void Verify_the_updated_URL_redirect_for_Source_URL_update() throws Throwable {
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        driver.get(prop.getProperty("EditSourceURLValue"));   
+        Thread.sleep(5000);
+        
+        String redirectedURL = driver.getCurrentUrl();
+        System.out.println(redirectedURL);
+        assertEquals(prop.getProperty("TargetURLValue"), redirectedURL);
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+        Thread.sleep(2000);
+        
+    }
+    
+/*<---------------------------------URL Redirect for Version History------------------------------------------>*/
+    
+    @Then("^Click on Version History option of created URL redirect$")
+    public void Click_on_the_Version_History_option_of_created_URL_redirect() throws Throwable {
+    	driver.navigate().refresh();
+    	Thread.sleep(5000);
+    	WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+    	Thread.sleep(3000);
+    	actionIcon.click();
+    	Thread.sleep(3000);
+    	WebElement editIcon = driver.findElement(By.xpath("//div[contains(text(),'Version History')]"));
+  	    editIcon.click(); 
+  	    Thread.sleep(2000);
+    }
+    
+    @Then("^Verify the result$")
+    public void Verify_the_result() throws Throwable {
+    	List<WebElement> tableResult = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int resultSize = tableResult.size();
+		assertNotEquals(resultSize,0);
+		System.out.println("Result of the Filter is: " + resultSize);
+    }	
+   @Then("^Click on close button$")
+   public void Click_on_close_button() throws Throwable {	
+		
+		WebElement closeButton = driver.findElement(By.xpath("//div[@class='popup-close']"));
+    	wait.until(ExpectedConditions.visibilityOf(closeButton));
+    	
+    	boolean test = driver.getPageSource().contains(prop.getProperty("SourceURLValue"));
+    	System.out.println("Contains Source URL: "+test);
+    	Assert.assertEquals(test, true);
+    	closeButton.click();
+    	Thread.sleep(3000);
+    } 
+    
 }	
 /*<--------------------------------------URL Redirect Features Ended------------------------------------------->*/
 	

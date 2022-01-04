@@ -266,6 +266,73 @@ Examples:
 |username        			|password            |
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
+#----------------------------------------------------------------------------------------------------------#
+#Scenario 10:
+#URL Redirect creation - Edit Source URL scenario#
+
+@EditSourceURL @URLRedirect
+Scenario Outline: Validating the URL - Edit the Target URL
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the update Source URL value - Available
+And  Disable if it is available
+Then Filter the Status option by Enabled
+Then Search for the Source URL - Available
+And  Disable if it is available
+Then Enter the value for Source URL
+Then Enter the value for Target URL
+Then Select the Date value
+Then Click on POST button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URL redirect
+Then Click on Edit option of created URL redirect
+Then Clear the Source URL field and give new URL
+Then Verify the error-success message 
+Then Verify the updated URL redirect for Source URL update
+
+
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+#----------------------------------------------------------------------------------------------------------#
+#Scenario 11:
+#URL Redirect creation - Version History scenario#
+
+@VersionHistory
+Scenario Outline: Validating the URL - Redirect creation
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the Source URL - Available
+And Disable if it is available
+Then Enter the value for Source URL
+Then Enter the value for Target URL
+Then Select the Date value
+Then Click on POST button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URL redirect
+Then Click on Version History option of created URL redirect
+Then Verify the result
+Then Click on close button
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+
 #-----------------------------------------------------------------------------------------------------------#
 
 
