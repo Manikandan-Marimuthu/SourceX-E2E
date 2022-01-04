@@ -909,7 +909,6 @@ public class stepDefination extends Base {
 		Thread.sleep(2000);
 	}
 
-
 	/*--------------------------------URLRedirect_A-BandB-A_when_A-B_is_Disabled-------------------------------------------------*/
 
 	@Then("^Search for the  SourceURLA - Available$")

@@ -25,7 +25,7 @@ public class Base {
 		prop=new Properties();
 		String userpath = System.getProperty("user.dir");
 		System.out.println(userpath);
-		String propertypath = userpath+"\\src\\test\\java\\Cucumber\\Automation\\global.properties";
+		String propertypath = userpath+"src\\test\\java\\Cucumber\\Automation\\global.properties";
 		System.out.println(propertypath);
 		FileInputStream fis=new FileInputStream(propertypath);
 		prop.load(fis);
