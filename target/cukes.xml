@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="251.426273">
-<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect Filter functionality" time="251.426273">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="260.466208">
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect Filter functionality" time="260.466208">
 <system-out><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
 When User is on home page...................................................passed
 Then Click on the profile icon..............................................passed
@@ -19,7 +19,9 @@ Then Click on Confirm button................................................pass
 Then Verify the error-sucess message........................................passed
 Then Click on close button in the pop up....................................passed
 Then Verify the created URLfilter redirect..................................passed
-Then Filter the Status option by SourceURL..................................passed
+Then Filter by Enabled Status...............................................passed
+Then Filter by All Status...................................................passed
+Then Filter by Disabled Status..............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

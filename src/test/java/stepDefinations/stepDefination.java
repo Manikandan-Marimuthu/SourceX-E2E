@@ -26,6 +26,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+
 import Cucumber.Automation.Base;
 
 @RunWith(Cucumber.class)
@@ -1608,6 +1610,276 @@ public class stepDefination extends Base {
 			Thread.sleep(3000);
 		}
 		Thread.sleep(3000);
+	}
+	
+	
+	/*--------------------------------URLRedirect Target URL Filter option-------------------------------------------------*/
+
+	@Then("^Filter  by TargetURL$")
+	public void filter_by_TargetURL() throws Throwable {
+		Thread.sleep(3000);
+		WebElement targeturlFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[2]"));
+		wait.until(ExpectedConditions.visibilityOf(targeturlFilterIcon));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(targeturlFilterIcon).click().perform();
+		Thread.sleep(3000);
+
+		WebElement targeturlSearchvalue = driver.findElement(By.xpath("//input[@name='search']"));
+		targeturlSearchvalue.sendKeys(prop.getProperty("TargetURL_filter"));
+		Thread.sleep(5000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+		List<WebElement> tableResult1 = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int target_filterSize = tableResult1.size();
+
+		System.out.println("Result of the TargetURL Filter is: " + target_filterSize);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);
+
+		action.sendKeys(Keys.PAGE_UP).build().perform();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		if (target_filterSize > 0) {
+			Thread.sleep(3000);
+			System.out.println(
+					"TargetURl filter is working as expected and avaliable value in 1st page is: " + target_filterSize);
+
+			Thread.sleep(2000);
+		} else {
+			System.out.println("TargetURl filter is not working as expected");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+
+	}
+
+	/*--------------------------------URLRedirect USER Filter option-------------------------------------------------*/
+
+	@Then("^Filter by USER$")
+	public void filter_by_User() throws Throwable {
+		Thread.sleep(3000);
+		WebElement userFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[3]"));
+		wait.until(ExpectedConditions.visibilityOf(userFilterIcon));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(userFilterIcon).click().perform();
+		Thread.sleep(3000);
+
+		WebElement userSearchvalue = driver.findElement(By.xpath("//input[@name='input']"));
+		userSearchvalue.sendKeys(prop.getProperty("User_filter"));
+		Thread.sleep(3000);
+
+		WebElement useroptionIcon = driver.findElement(By.xpath("//span[@class='user-list ng-star-inserted']"));
+		wait.until(ExpectedConditions.visibilityOf(useroptionIcon));
+		Thread.sleep(3000);
+
+		action.moveToElement(useroptionIcon).click().perform();
+		Thread.sleep(3000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(5000);
+
+		List<WebElement> tableResult1 = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int user_filterSize = tableResult1.size();
+
+		System.out.println("Result of the TargetURL Filter is: " + user_filterSize);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);
+
+		action.sendKeys(Keys.PAGE_UP).build().perform();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		if (user_filterSize > 0) {
+			Thread.sleep(3000);
+			System.out.println(
+					"USER filter is working as expected and avaliable value in 1st page is: " + user_filterSize);
+
+			Thread.sleep(2000);
+		} else {
+			System.out.println("USER filter is not working as expected");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+
+	}
+
+	/*--------------------------------URLRedirect StartDate Filter option-------------------------------------------------*/
+	
+	@Then("^Filter by Today's StartDate$")
+	public void filter_by_todays_StartDate() throws Throwable {
+		Thread.sleep(3000);
+		WebElement startdateFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[4]"));
+		wait.until(ExpectedConditions.visibilityOf(startdateFilterIcon));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(startdateFilterIcon).click().perform();
+		Thread.sleep(3000);
+
+		WebElement startDateSearchvalue = driver.findElement(By.xpath("(//button[@title='Toggle datepicker'])[2]"));
+		action.moveToElement(startDateSearchvalue).click().perform();
+		Thread.sleep(3000);
+		
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(5000);
+		/*clicking on close button*/
+		WebElement closeButton=driver.findElement(By.xpath("//button/cds-icon[@title='Close']"));
+		closeButton.click();
+
+		List<WebElement> tableResult1 = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int startDate_filterSize = tableResult1.size();
+
+		System.out.println("Result of the StartDate Filter is: " + startDate_filterSize);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);
+
+		action.sendKeys(Keys.PAGE_UP).build().perform();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		if (startDate_filterSize > 0) {
+			Thread.sleep(3000);
+	   System.out.println("StartDate filter is working as expected and avaliable value in 1st page is: " + startDate_filterSize);
+
+			Thread.sleep(2000);
+		} else {
+			System.out.println("StartDate filter is not working as expected");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+
+	}
+	
+	/*--------------------------------URLRedirect Status Filter option-------------------------------------------------*/
+	
+	@Then("^Filter by Enabled Status$")
+	public void filter_by_Enabled_Status() throws Throwable {
+		Thread.sleep(3000);
+		WebElement statusFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[5]"));
+		wait.until(ExpectedConditions.visibilityOf(statusFilterIcon));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(statusFilterIcon).click().perform();
+		Thread.sleep(3000);
+
+		Select select =new Select(driver.findElement(By.xpath("//select[@name='options']")));
+		select.selectByVisibleText("Enabled");
+		/*clicking on close button*/
+		WebElement closeButton=driver.findElement(By.xpath("//button/cds-icon[@title='Close']"));
+		closeButton.click();
+
+		List<WebElement> tableResult1 = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int enabled_filterSize = tableResult1.size();
+
+		System.out.println("Result of the Enabled status Filter is: " + enabled_filterSize);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);
+
+		action.sendKeys(Keys.PAGE_UP).build().perform();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		if (enabled_filterSize > 0) {
+			Thread.sleep(3000);
+	   System.out.println("Enabled Status filter is working as expected and avaliable value in 1st page is: " + enabled_filterSize);
+
+			Thread.sleep(2000);
+		} else {
+			System.out.println("Enabled filter is not working as expected");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+
+	}
+	
+	@Then("^Filter by All Status$")
+	public void filter_by_All_Status() throws Throwable {
+		Thread.sleep(3000);
+		WebElement statusFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[5]"));
+		wait.until(ExpectedConditions.visibilityOf(statusFilterIcon));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(statusFilterIcon).click().perform();
+		Thread.sleep(3000);
+
+		Select select =new Select(driver.findElement(By.xpath("//select[@name='options']")));
+		select.selectByVisibleText("All");
+		/*clicking on close button*/
+		WebElement closeButton=driver.findElement(By.xpath("//button/cds-icon[@title='Close']"));
+		closeButton.click();
+
+		List<WebElement> tableResult1 = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int all_filterSize = tableResult1.size();
+
+		System.out.println("Result of the All status Filter is: " + all_filterSize);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);
+
+		action.sendKeys(Keys.PAGE_UP).build().perform();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		if (all_filterSize > 0) {
+			Thread.sleep(3000);
+	   System.out.println("ALL Status filter is working as expected and avaliable value in 1st page is: " + all_filterSize);
+
+			Thread.sleep(2000);
+		} else {
+			System.out.println("ALL filter is not working as expected");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+
+	}
+	
+	@Then("^Filter by Disabled Status$")
+	public void filter_by_Disabled_Status() throws Throwable {
+		Thread.sleep(3000);
+		WebElement statusFilterIcon = driver.findElement(By.xpath("(//cds-icon[@shape='filter-grid'])[5]"));
+		wait.until(ExpectedConditions.visibilityOf(statusFilterIcon));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(statusFilterIcon).click().perform();
+		Thread.sleep(3000);
+
+		Select select =new Select(driver.findElement(By.xpath("//select[@name='options']")));
+		select.selectByVisibleText("Disabled");
+		/*clicking on close button*/
+		WebElement closeButton=driver.findElement(By.xpath("//button/cds-icon[@title='Close']"));
+		closeButton.click();
+
+		List<WebElement> tableResult1 = driver.findElements(By.xpath("//div[@class='datagrid-scrolling-cells']"));
+		int disabled_filterSize = tableResult1.size();
+
+		System.out.println("Result of the Disabled status Filter is: " + disabled_filterSize);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);
+
+		action.sendKeys(Keys.PAGE_UP).build().perform();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		if (disabled_filterSize > 0) {
+			Thread.sleep(3000);
+	   System.out.println("Disabled Status filter is working as expected and avaliable value in 1st page is: " + disabled_filterSize);
+
+			Thread.sleep(2000);
+		} else {
+			System.out.println("Disabled filter is not working as expected");
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+		}
+		Thread.sleep(3000);
+
 	}
     
 }	
