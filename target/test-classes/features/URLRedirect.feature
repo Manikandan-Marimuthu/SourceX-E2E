@@ -359,6 +359,116 @@ Examples:
 |username        			|password            |
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
+#Scenario 13
+@URLRedirect_Filter_Option_TargetURL 
+Scenario Outline: Validating the URL - Redirect Filter functionality
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  SourceURL_filter - Available
+And Disable  SourceURL_filter is available
+Then Enter the value for SourceURL_filter
+Then Enter the value for TargetURL_filter
+Then Select the Date value
+Then Click on POST button
+Then Click on Confirm button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URLfilter redirect
+Then Filter  by TargetURL
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+
+#Scenario 14
+@URLRedirect_Filter_Option_USER
+Scenario Outline: Validating the URL - Redirect Filter functionality
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  SourceURL_filter - Available
+And Disable  SourceURL_filter is available
+Then Enter the value for SourceURL_filter
+Then Enter the value for TargetURL_filter
+Then Select the Date value
+Then Click on POST button
+Then Click on Confirm button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URLfilter redirect
+Then Filter by USER
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+
+#Scenario 15
+@URLRedirect_Filter_Option_StartDate
+Scenario Outline: Validating the URL - Redirect Filter functionality
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  SourceURL_filter - Available
+And Disable  SourceURL_filter is available
+Then Enter the value for SourceURL_filter
+Then Enter the value for TargetURL_filter
+Then Select the Date value
+Then Click on POST button
+Then Click on Confirm button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URLfilter redirect
+Then Filter by Today's StartDate
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+#Scenario 16
+@URLRedirect_Filter_Option_Status
+Scenario Outline: Validating the URL - Redirect Filter functionality
+Given Enter the "<username>" and "<password>"
+When User is on home page
+Then Click on the profile icon
+Then Click on the Admin option
+Then Click on Selfservice option from leftNavigation panel
+Then Click on URL Redirect Option
+Then Verify the Source URL field is loaded
+Then Filter the Status option by Enabled
+Then Search for the  SourceURL_filter - Available
+And Disable  SourceURL_filter is available
+Then Enter the value for SourceURL_filter
+Then Enter the value for TargetURL_filter
+Then Select the Date value
+Then Click on POST button
+Then Click on Confirm button
+Then Verify the error-sucess message
+Then Click on close button in the pop up
+Then Verify the created URLfilter redirect
+Then Filter by Enabled Status
+Then Filter by All Status
+Then Filter by Disabled Status
+Examples:
+|username        			|password            |
+|mmarimuthu@vmware.com      |Leavemealone@2401   |
+
+
+
 
 
 #-----------------------------------------------------------------------------------------------------------#

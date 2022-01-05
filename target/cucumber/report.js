@@ -9,15 +9,11 @@ formatter.feature({
 formatter.scenarioOutline({
   "comments": [
     {
-      "line": 335,
-      "value": "#----------------------------------------------------------------------------------------------------------#"
-    },
-    {
-      "line": 336,
-      "value": "#Scenario 12"
+      "line": 442,
+      "value": "#Scenario 16"
     }
   ],
-  "line": 338,
+  "line": 444,
   "name": "Validating the URL - Redirect Filter functionality",
   "description": "",
   "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-filter-functionality",
@@ -25,108 +21,118 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 337,
-      "name": "@URLRedirect_Filter_Option_SourceURL"
+      "line": 443,
+      "name": "@URLRedirect_Filter_Option_Status"
     }
   ]
 });
 formatter.step({
-  "line": 339,
+  "line": 445,
   "name": "Enter the \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 340,
+  "line": 446,
   "name": "User is on home page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 341,
+  "line": 447,
   "name": "Click on the profile icon",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 342,
+  "line": 448,
   "name": "Click on the Admin option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 343,
+  "line": 449,
   "name": "Click on Selfservice option from leftNavigation panel",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 344,
+  "line": 450,
   "name": "Click on URL Redirect Option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 345,
+  "line": 451,
   "name": "Verify the Source URL field is loaded",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 346,
+  "line": 452,
   "name": "Filter the Status option by Enabled",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 347,
+  "line": 453,
   "name": "Search for the  SourceURL_filter - Available",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 348,
+  "line": 454,
   "name": "Disable  SourceURL_filter is available",
   "keyword": "And "
 });
 formatter.step({
-  "line": 349,
+  "line": 455,
   "name": "Enter the value for SourceURL_filter",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 350,
+  "line": 456,
   "name": "Enter the value for TargetURL_filter",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 351,
+  "line": 457,
   "name": "Select the Date value",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 352,
+  "line": 458,
   "name": "Click on POST button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 353,
+  "line": 459,
   "name": "Click on Confirm button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 354,
+  "line": 460,
   "name": "Verify the error-sucess message",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 355,
+  "line": 461,
   "name": "Click on close button in the pop up",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 356,
+  "line": 462,
   "name": "Verify the created URLfilter redirect",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 357,
-  "name": "Filter the Status option by SourceURL",
+  "line": 463,
+  "name": "Filter by Enabled Status",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 464,
+  "name": "Filter by All Status",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 465,
+  "name": "Filter by Disabled Status",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 358,
+  "line": 466,
   "name": "",
   "description": "",
   "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-filter-functionality;",
@@ -136,7 +142,7 @@ formatter.examples({
         "username",
         "password"
       ],
-      "line": 359,
+      "line": 467,
       "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-filter-functionality;;1"
     },
     {
@@ -144,18 +150,18 @@ formatter.examples({
         "mmarimuthu@vmware.com",
         "Leavemealone@2401"
       ],
-      "line": 360,
+      "line": 468,
       "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-filter-functionality;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 147500,
+  "duration": 170000,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 360,
+  "line": 468,
   "name": "Validating the URL - Redirect Filter functionality",
   "description": "",
   "id": "sourcex---url-redirect-functionality-validation;validating-the-url---redirect-filter-functionality;;2",
@@ -163,13 +169,13 @@ formatter.scenario({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 337,
-      "name": "@URLRedirect_Filter_Option_SourceURL"
+      "line": 443,
+      "name": "@URLRedirect_Filter_Option_Status"
     }
   ]
 });
 formatter.step({
-  "line": 339,
+  "line": 445,
   "name": "Enter the \"mmarimuthu@vmware.com\" and \"Leavemealone@2401\"",
   "matchedColumns": [
     0,
@@ -178,93 +184,103 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "line": 340,
+  "line": 446,
   "name": "User is on home page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 341,
+  "line": 447,
   "name": "Click on the profile icon",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 342,
+  "line": 448,
   "name": "Click on the Admin option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 343,
+  "line": 449,
   "name": "Click on Selfservice option from leftNavigation panel",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 344,
+  "line": 450,
   "name": "Click on URL Redirect Option",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 345,
+  "line": 451,
   "name": "Verify the Source URL field is loaded",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 346,
+  "line": 452,
   "name": "Filter the Status option by Enabled",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 347,
+  "line": 453,
   "name": "Search for the  SourceURL_filter - Available",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 348,
+  "line": 454,
   "name": "Disable  SourceURL_filter is available",
   "keyword": "And "
 });
 formatter.step({
-  "line": 349,
+  "line": 455,
   "name": "Enter the value for SourceURL_filter",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 350,
+  "line": 456,
   "name": "Enter the value for TargetURL_filter",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 351,
+  "line": 457,
   "name": "Select the Date value",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 352,
+  "line": 458,
   "name": "Click on POST button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 353,
+  "line": 459,
   "name": "Click on Confirm button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 354,
+  "line": 460,
   "name": "Verify the error-sucess message",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 355,
+  "line": 461,
   "name": "Click on close button in the pop up",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 356,
+  "line": 462,
   "name": "Verify the created URLfilter redirect",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 357,
-  "name": "Filter the Status option by SourceURL",
+  "line": 463,
+  "name": "Filter by Enabled Status",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 464,
+  "name": "Filter by All Status",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 465,
+  "name": "Filter by Disabled Status",
   "keyword": "Then "
 });
 formatter.match({
@@ -281,137 +297,151 @@ formatter.match({
   "location": "stepDefination.enter_the_something_and_something(String,String)"
 });
 formatter.result({
-  "duration": 39151674500,
+  "duration": 34594327600,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.user_is_on_home_page()"
 });
 formatter.result({
-  "duration": 3129797899,
+  "duration": 3084897500,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_the_profile_icon()"
 });
 formatter.result({
-  "duration": 3212882200,
+  "duration": 3212431300,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_the_admin_option()"
 });
 formatter.result({
-  "duration": 22982751600,
+  "duration": 12447883300,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_Selfservice_option_from_leftNavigation_panel()"
 });
 formatter.result({
-  "duration": 8203442199,
+  "duration": 8154432600,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_URL_Redirect_Option()"
 });
 formatter.result({
-  "duration": 11666799400,
+  "duration": 11169155700,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.verify_the_source_url_field_is_loaded()"
 });
 formatter.result({
-  "duration": 3060299700,
+  "duration": 3106260200,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.filter_the_Status_option_by_Enabled()"
 });
 formatter.result({
-  "duration": 14378511000,
+  "duration": 14419097200,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.search_for_the_SourceURL_filter_Available()"
 });
 formatter.result({
-  "duration": 26551096399,
+  "duration": 26466577400,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.disable_SourceURL_filter_is_available()"
 });
 formatter.result({
-  "duration": 32987315500,
+  "duration": 32922721200,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.enter_the_value_for_SourceURL_filter()"
 });
 formatter.result({
-  "duration": 6375123200,
+  "duration": 6269298700,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.enter_the_value_for_targetURL_filter()"
 });
 formatter.result({
-  "duration": 6438092900,
+  "duration": 6341545300,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.select_the_date_value()"
 });
 formatter.result({
-  "duration": 11276649600,
+  "duration": 11240176700,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_post_button()"
 });
 formatter.result({
-  "duration": 10205788399,
+  "duration": 10139118300,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_Confirm_button()"
 });
 formatter.result({
-  "duration": 3175036300,
+  "duration": 3119102900,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.verify_the_error_sucess_message()"
 });
 formatter.result({
-  "duration": 126359000,
+  "duration": 98661200,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.click_on_close_button_in_the_pop_up()"
 });
 formatter.result({
-  "duration": 3150700600,
+  "duration": 3087585400,
   "status": "passed"
 });
 formatter.match({
   "location": "stepDefination.verify_the_created_URLfilter_redirect()"
 });
 formatter.result({
-  "duration": 14050848300,
+  "duration": 8744952900,
   "status": "passed"
 });
 formatter.match({
-  "location": "stepDefination.filter_the_Status_option_by_SourceURL()"
+  "location": "stepDefination.filter_by_Enabled_Status()"
 });
 formatter.result({
-  "duration": 31196713199,
+  "duration": 20626355400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "stepDefination.filter_by_All_Status()"
+});
+formatter.result({
+  "duration": 20530053200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "stepDefination.filter_by_Disabled_Status()"
+});
+formatter.result({
+  "duration": 20578800800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 106244001,
+  "duration": 112603400,
   "status": "passed"
 });
 });
