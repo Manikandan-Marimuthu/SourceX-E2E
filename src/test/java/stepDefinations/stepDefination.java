@@ -49,8 +49,12 @@ public class stepDefination extends Base {
 		wait.until(ExpectedConditions.visibilityOf(username));
 		username.sendKeys(strArg1);
 		nextButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
+		Robot robot = new Robot();
+    	robot.keyPress(KeyEvent.VK_ESCAPE);
+    	robot.keyRelease(KeyEvent.VK_ESCAPE);
+    	Thread.sleep(4000);
 		
 		WebElement password = driver.findElement(By.id("password"));
 		wait.until(ExpectedConditions.visibilityOf(password));
@@ -166,11 +170,11 @@ public class stepDefination extends Base {
          robot.keyRelease(KeyEvent.VK_DOWN);
     	 robot.keyPress(KeyEvent.VK_DOWN);
          robot.keyRelease(KeyEvent.VK_DOWN);
+         Thread.sleep(3000);
     	 WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
     	 
-    	 Actions action = new Actions(driver);
-    	 action.sendKeys(Keys.PAGE_DOWN).build().perform();
-    	 Thread.sleep(3000);
+    	 //Actions action = new Actions(driver);
+    	 //action.sendKeys(Keys.PAGE_DOWN).build().perform();
     	  
     	  actionIcon.click();
       	  Thread.sleep(3000);
@@ -180,7 +184,7 @@ public class stepDefination extends Base {
 
     	  WebElement disableIcon = driver.findElement(By.xpath("//div[contains(text(),'Disable')]"));
     	  disableIcon.click(); 
-    	  Thread.sleep(2000);
+    	  Thread.sleep(5000);
     	  
     	  boolean disableMsg = driver.getPageSource().contains("Do you want to disable this URL redirect?");
     	  System.out.println("Validation Message is: "+disableMsg);
@@ -334,9 +338,10 @@ public class stepDefination extends Base {
     	driver.navigate().refresh();
     	Thread.sleep(5000);
     	WebElement actionIcon = driver.findElement(By.xpath("//cds-icon[@shape='ellipsis-vertical']"));
+    	wait.until(ExpectedConditions.visibilityOf(actionIcon));
     	Thread.sleep(3000);
     	actionIcon.click();
-    	Thread.sleep(3000);
+    	Thread.sleep(1000);
     	WebElement editIcon = driver.findElement(By.xpath("//div[contains(text(),'Edit')]"));
   	    editIcon.click(); 
   	    Thread.sleep(2000);
@@ -345,14 +350,12 @@ public class stepDefination extends Base {
     @Then("^Clear the Target URL field and give new URL$")
     public void Clear_the_Target_URL_field_and_give_new_URL() throws Throwable {
     	WebElement targetURLField = driver.findElement(By.id("clr-form-control-9"));
-    	Thread.sleep(3000);
+    	wait.until(ExpectedConditions.visibilityOf(targetURLField));
     	targetURLField.clear();
-    	Thread.sleep(3000);
     	targetURLField.sendKeys(prop.getProperty("EditTargetURLValue"));
-  	    Thread.sleep(2000);
-  	    WebElement saveButton = driver.findElement(By.xpath("//div[@class='edit-submit']/button"));
+  	    WebElement saveButton = driver.findElement(By.xpath("//div[@class='edit-submit']/button")); 
 	    saveButton.click(); 
-	    Thread.sleep(2000);
+	    Thread.sleep(3000);
   	    
     }	
     
@@ -361,9 +364,9 @@ public class stepDefination extends Base {
     	WebElement closeButton = driver.findElement(By.xpath("//button[@class='btn-dialog']"));
     	wait.until(ExpectedConditions.visibilityOf(closeButton));
     	
-    	boolean test = driver.getPageSource().contains("URL redirect has been updated sucessfully.");
-    	System.out.println("Message is: "+test);
-    	Assert.assertEquals(test, true);
+    	boolean msgvalidation = driver.getPageSource().contains("URL redirect has been updated sucessfully.");
+    	System.out.println("Message is: "+msgvalidation);
+    	Assert.assertEquals(msgvalidation, true);
     	closeButton.click();
     	Thread.sleep(3000);
     }

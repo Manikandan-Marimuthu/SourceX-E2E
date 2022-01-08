@@ -30,7 +30,7 @@ Examples:
 #Scenario 2
 #URL Redirect creation - Future date scenario#
 
-@URLRedirect @fail
+@URLRedirect 
 Scenario Outline: Validating the URL - Redirect future date creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -57,7 +57,7 @@ Examples:
 #Scenario 3
 #URL Redirect creation - Edit Target URL scenario#
 
-@EditTargetURL @URLRedirect
+@EditTargetURL @URLRedirect 
 Scenario Outline: Validating the URL - Edit the Target URL
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -89,7 +89,7 @@ Examples:
 
 #Scenario 4
 
-@URLRedirectCrossBU @URLRedirect
+@URLRedirectCrossBU @URLRedirect 
 Scenario Outline: Validating the URL - Redirect Cross BU creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -114,7 +114,7 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #Scenario 5
-@URLRedirectCrossContent @URLRedirect
+@URLRedirectCrossContent @URLRedirect 
 Scenario Outline: Validating the URL - Redirect Cross Content creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -139,7 +139,7 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #Scenario 6
-@Enabled_URLRedirectEdit @URLRedirect
+@Enabled_URLRedirectEdit @URLRedirect 
 Scenario Outline: Validating the URL - Redirect Enable functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -166,7 +166,7 @@ Examples:
 
 
 #Scenario 7
-@Disabled_URLRedirectEdit @URLRedirect
+@Disabled_URLRedirectEdit @URLRedirect 
 Scenario Outline: Validating the URL - Redirect Enable functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -195,7 +195,7 @@ Examples:
 
 
 #Scenario 8:
-@URLRedirect_A-BandB-A_when_A-B_is_Disabled
+@URLRedirect_A-BandB-A_when_A-B_is_Disabled 
 Scenario Outline: Validating the URL - Redirect A-B and B-A functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -233,7 +233,7 @@ Examples:
 
 
 #Scenario 9:
-@URLRedirect_A-BandB-A_when_A-B_is_Enabled
+@URLRedirect_A-BandB-A_when_A-B_is_Enabled 
 Scenario Outline: Validating the URL - Redirect A-B and B-A functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -270,7 +270,7 @@ Examples:
 #Scenario 10:
 #URL Redirect creation - Edit Source URL scenario#
 
-@EditSourceURL @URLRedirect
+@EditSourceURL @URLRedirect  
 Scenario Outline: Validating the URL - Edit the Target URL
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -306,7 +306,7 @@ Examples:
 #Scenario 11:
 #URL Redirect creation - Version History scenario#
 
-@VersionHistory
+@VersionHistory 
 Scenario Outline: Validating the URL - Redirect creation
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -334,7 +334,7 @@ Examples:
 
 #----------------------------------------------------------------------------------------------------------#
 #Scenario 12
-@URLRedirect_Filter_Option_SourceURL 
+@URLRedirect_Filter_Option_SourceURL  
 Scenario Outline: Validating the URL - Redirect Filter functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -360,7 +360,7 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #Scenario 13
-@URLRedirect_Filter_Option_TargetURL 
+@URLRedirect_Filter_Option_TargetURL  
 Scenario Outline: Validating the URL - Redirect Filter functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -387,7 +387,7 @@ Examples:
 
 
 #Scenario 14
-@URLRedirect_Filter_Option_USER
+@URLRedirect_Filter_Option_USER  
 Scenario Outline: Validating the URL - Redirect Filter functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -414,7 +414,7 @@ Examples:
 
 
 #Scenario 15
-@URLRedirect_Filter_Option_StartDate
+@URLRedirect_Filter_Option_StartDate 
 Scenario Outline: Validating the URL - Redirect Filter functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
@@ -440,7 +440,7 @@ Examples:
 |mmarimuthu@vmware.com      |Leavemealone@2401   |
 
 #Scenario 16
-@URLRedirect_Filter_Option_Status
+@URLRedirect_Filter_Option_Status 
 Scenario Outline: Validating the URL - Redirect Filter functionality
 Given Enter the "<username>" and "<password>"
 When User is on home page
