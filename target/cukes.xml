@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="260.466208">
-<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect Filter functionality" time="260.466208">
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="1492.215687">
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect creation" time="190.932268">
+<system-out><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
+When User is on home page...................................................passed
+Then Click on the profile icon..............................................passed
+Then Click on the Admin option..............................................passed
+Then Click on Selfservice option from leftNavigation panel..................passed
+Then Click on URL Redirect Option...........................................passed
+Then Verify the Source URL field is loaded..................................passed
+Then Filter the Status option by Enabled....................................passed
+Then Search for the Source URL - Available..................................passed
+And Disable if it is available..............................................passed
+Then Enter the value for Source URL.........................................passed
+Then Enter the value for Target URL.........................................passed
+Then Select the Date value..................................................passed
+Then Click on POST button...................................................passed
+Then Verify the error-sucess message........................................passed
+Then Click on close button in the pop up....................................passed
+Then Verify the created URL redirect........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect future date creation" time="224.254379">
+<system-out><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
+When User is on home page...................................................passed
+Then Click on the profile icon..............................................passed
+Then Click on the Admin option..............................................passed
+Then Click on Selfservice option from leftNavigation panel..................passed
+Then Click on URL Redirect Option...........................................passed
+Then Verify the Source URL field is loaded..................................passed
+Then Filter the Status option by Enabled....................................passed
+Then Search for the Source URL - Available..................................passed
+And Disable if it is available..............................................passed
+Then Enter the value for Source URL.........................................passed
+Then Enter the value for Target URL.........................................passed
+Then Select the Future Date value...........................................passed
+Then Click on POST button...................................................passed
+Then Verify the error-sucess message........................................passed
+Then Click on close button in the pop up....................................passed
+Then Verify the created URL redirect for future dated.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Edit the Target URL" time="287.832355">
+<failure message="org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//cds-icon[@shape='ellipsis-vertical']&quot;}&#10;  (Session info: chrome=97.0.4692.71)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'B903LMAA', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\u29082\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:62022}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 43547ccf662392affa4c47e07a059706&#10;*** Element info: {Using=xpath, value=//cds-icon[@shape='ellipsis-vertical']}&#13;&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;&#10;&#9;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;&#10;&#9;at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)&#13;&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)&#13;&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)&#13;&#10;&#9;at org.openqa.selenium.By$ByXPath.findElement(By.java:353)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)&#13;&#10;&#9;at stepDefinations.stepDefination.Click_on_Edit_option_of_created_URL_redirect(stepDefination.java:340)&#13;&#10;&#9;at ✽.Then Click on Edit option of created URL redirect(URLRedirect.feature:295)&#13;&#10;"><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
+When User is on home page...................................................passed
+Then Click on the profile icon..............................................passed
+Then Click on the Admin option..............................................passed
+Then Click on Selfservice option from leftNavigation panel..................passed
+Then Click on URL Redirect Option...........................................passed
+Then Verify the Source URL field is loaded..................................passed
+Then Filter the Status option by Enabled....................................passed
+Then Search for the update Source URL value - Available.....................passed
+And Disable if it is available..............................................passed
+Then Filter the Status option by Enabled....................................passed
+Then Search for the Source URL - Available..................................passed
+And Disable if it is available..............................................passed
+Then Enter the value for Source URL.........................................passed
+Then Enter the value for Target URL.........................................passed
+Then Select the Date value..................................................passed
+Then Click on POST button...................................................passed
+Then Verify the error-sucess message........................................passed
+Then Click on close button in the pop up....................................passed
+Then Verify the created URL redirect........................................passed
+Then Click on Edit option of created URL redirect...........................failed
+Then Clear the Source URL field and give new URL............................skipped
+Then Verify the error-success message.......................................skipped
+Then Verify the updated URL redirect for Source URL update..................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//cds-icon[@shape='ellipsis-vertical']"}
+  (Session info: chrome=97.0.4692.71)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'B903LMAA', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\u29082\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:62022}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 43547ccf662392affa4c47e07a059706
+*** Element info: {Using=xpath, value=//cds-icon[@shape='ellipsis-vertical']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at stepDefinations.stepDefination.Click_on_Edit_option_of_created_URL_redirect(stepDefination.java:340)
+	at ✽.Then Click on Edit option of created URL redirect(URLRedirect.feature:295)
+]]></failure>
+</testcase>
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect Filter functionality" time="268.333939">
 <system-out><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
 When User is on home page...................................................passed
 Then Click on the profile icon..............................................passed
@@ -19,9 +113,51 @@ Then Click on Confirm button................................................pass
 Then Verify the error-sucess message........................................passed
 Then Click on close button in the pop up....................................passed
 Then Verify the created URLfilter redirect..................................passed
-Then Filter by Enabled Status...............................................passed
-Then Filter by All Status...................................................passed
-Then Filter by Disabled Status..............................................passed
+Then Filter the Status option by SourceURL..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect Filter functionality 2" time="254.347588">
+<system-out><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
+When User is on home page...................................................passed
+Then Click on the profile icon..............................................passed
+Then Click on the Admin option..............................................passed
+Then Click on Selfservice option from leftNavigation panel..................passed
+Then Click on URL Redirect Option...........................................passed
+Then Verify the Source URL field is loaded..................................passed
+Then Filter the Status option by Enabled....................................passed
+Then Search for the  SourceURL_filter - Available...........................passed
+And Disable  SourceURL_filter is available..................................passed
+Then Enter the value for SourceURL_filter...................................passed
+Then Enter the value for TargetURL_filter...................................passed
+Then Select the Date value..................................................passed
+Then Click on POST button...................................................passed
+Then Click on Confirm button................................................passed
+Then Verify the error-sucess message........................................passed
+Then Click on close button in the pop up....................................passed
+Then Verify the created URLfilter redirect..................................passed
+Then Filter  by TargetURL...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="SourceX - URL Redirect functionality Validation" name="Validating the URL - Redirect Filter functionality 3" time="266.515158">
+<system-out><![CDATA[Given Enter the "mmarimuthu@vmware.com" and "Leavemealone@2401".............passed
+When User is on home page...................................................passed
+Then Click on the profile icon..............................................passed
+Then Click on the Admin option..............................................passed
+Then Click on Selfservice option from leftNavigation panel..................passed
+Then Click on URL Redirect Option...........................................passed
+Then Verify the Source URL field is loaded..................................passed
+Then Filter the Status option by Enabled....................................passed
+Then Search for the  SourceURL_filter - Available...........................passed
+And Disable  SourceURL_filter is available..................................passed
+Then Enter the value for SourceURL_filter...................................passed
+Then Enter the value for TargetURL_filter...................................passed
+Then Select the Date value..................................................passed
+Then Click on POST button...................................................passed
+Then Click on Confirm button................................................passed
+Then Verify the error-sucess message........................................passed
+Then Click on close button in the pop up....................................passed
+Then Verify the created URLfilter redirect..................................passed
+Then Filter by USER.........................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
